@@ -327,3 +327,101 @@ body.flash::before { content: ""; position: fixed; inset: 0; z-index: 90; backgr
 #sum .flow { font-size: 11px; margin-top: 18px; }
 .bonus-head { text-align: center; padding: 30px 0 0; }
 .bonus-head .px { font-size: clamp(16px, 3vw, 26px); color: var(--yellow); text-shadow: 4px 4px 0 var(--red); margin-bottom: 12px; }
+
+/* ===== 2D GAME FX + POLISH ===== */
+/* pixel cursor */
+body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' shape-rendering='crispEdges'%3E%3Cpath d='M2 2V18L6 14L9 20L12 19L9 13H15Z' fill='%23fff1e8' stroke='%231a1c2c' stroke-width='2'/%3E%3C/svg%3E") 2 2, auto; }
+a, button, summary, label, .pbtn { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' shape-rendering='crispEdges'%3E%3Cpath d='M2 2V18L6 14L9 20L12 19L9 13H15Z' fill='%23ffec27' stroke='%231a1c2c' stroke-width='2'/%3E%3C/svg%3E") 2 2, pointer; }
+
+/* start screen */
+.start-screen { position: fixed; inset: 0; z-index: 200; display: grid; place-content: center; justify-items: center; gap: 22px; text-align: center; padding: 24px;
+  background: radial-gradient(var(--cream) 1px, transparent 1.5px) 0 0 / 40px 40px, linear-gradient(var(--ink), var(--night) 60%, var(--plum)); }
+.js .start-screen { display: grid; }
+html:not(.js) .start-screen { display: none; }
+.s-small { font-size: 10px; color: var(--blue); letter-spacing: 2px; }
+.s-title { font-size: clamp(30px, 8vw, 84px); line-height: 1.15; color: var(--cream); text-shadow: 6px 6px 0 var(--red), 12px 12px 0 var(--ink); animation: drop .8s steps(8) both; }
+.s-title span { color: var(--yellow); }
+.s-sub { font-size: clamp(10px, 1.8vw, 15px); color: var(--pink); }
+.s-btn { font-size: 14px; padding: 18px 26px; margin-top: 18px; animation: pulse 1s steps(2) infinite; }
+.s-hint { font-size: 8px; color: var(--gray); }
+.start-screen.bye { animation: wipe .7s steps(7) forwards; }
+@keyframes drop { from { transform: translateY(-120%); } 70% { transform: translateY(8%); } }
+@keyframes pulse { 50% { transform: scale(1.08); } }
+@keyframes wipe { to { clip-path: inset(0 0 100% 0); } }
+
+/* twinkling stars + pixel mountains behind everything */
+.stars { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(var(--yellow) 1.2px, transparent 1.8px) 13px 31px / 130px 110px, radial-gradient(var(--cream) 1.2px, transparent 1.8px) 71px 7px / 170px 150px;
+  animation: twinkle 2.4s steps(2) infinite; }
+@keyframes twinkle { 50% { opacity: .25; } }
+.land { position: fixed; left: 0; right: 0; bottom: 0; height: 26vh; z-index: -1; pointer-events: none; }
+.land::before, .land::after { content: ""; position: absolute; inset: 0; }
+.land::before { background: #4a1d4a; clip-path: polygon(0 55%, 6% 55%, 6% 40%, 12% 40%, 12% 25%, 18% 25%, 18% 45%, 26% 45%, 26% 15%, 32% 15%, 32% 35%, 40% 35%, 40% 50%, 48% 50%, 48% 20%, 54% 20%, 54% 5%, 60% 5%, 60% 30%, 68% 30%, 68% 45%, 76% 45%, 76% 25%, 84% 25%, 84% 40%, 92% 40%, 92% 20%, 100% 20%, 100% 100%, 0 100%); }
+.land::after { background: #24102e; clip-path: polygon(0 75%, 10% 75%, 10% 65%, 20% 65%, 20% 80%, 34% 80%, 34% 60%, 44% 60%, 44% 72%, 58% 72%, 58% 62%, 70% 62%, 70% 78%, 82% 78%, 82% 66%, 92% 66%, 92% 74%, 100% 74%, 100% 100%, 0 100%); }
+
+/* hero: title letters fall in like blocks, stage gets clouds + sun */
+.title h1 .ch { display: inline-block; white-space: pre; }
+.started .title h1 .ch { animation: drop .6s steps(6) both; animation-delay: calc(var(--i) * 60ms); }
+.title h1:hover .ch { animation: hop .4s steps(4); animation-delay: calc(var(--i) * 30ms); }
+.stage-sky { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.cloud { position: absolute; height: 10px; width: 54px; background: var(--cream); opacity: .85; box-shadow: 10px -8px 0 0 var(--cream), 26px -8px 0 0 var(--cream); animation: drift 14s linear infinite; }
+.cloud.c1 { top: 16%; left: -20%; }
+.cloud.c2 { top: 30%; left: -40%; width: 36px; animation-duration: 20s; animation-delay: -8s; }
+@keyframes drift { to { transform: translateX(260%); } }
+.stage-sun { position: absolute; width: 13%; aspect-ratio: 1; left: 12%; top: 46%; background: var(--yellow); box-shadow: 0 0 0 6px rgba(255, 236, 39, .25); }
+.title-stage .hero-btn, .title-stage .bubble { z-index: 1; }
+.go { margin-top: 18px; }
+
+/* sections spawn in with stepped motion (only with JS, so content is never lost) */
+.js main > section:not(.seen), .js .bonus-head:not(.seen) { opacity: 0; }
+.js main > section.seen, .js .bonus-head.seen { animation: spawn .55s steps(5) both; }
+@keyframes spawn { from { opacity: 0; transform: translateY(48px) scale(.96); } }
+.win > h2 { animation: none; }
+.seen .win > h2, .seen > h2 { animation: tab .5s steps(4) .2s both; }
+@keyframes tab { from { transform: translateY(-24px); opacity: 0; } }
+
+/* coloured tabs per section */
+#coding > h2 { background: var(--blue); color: var(--ink); }
+#photography > h2 { background: var(--orange); color: var(--ink); }
+#story > h2 { background: var(--plum); }
+#bugs > h2 { background: var(--green); color: var(--ink); }
+#goals > h2 { background: var(--pink); color: var(--ink); }
+#sum > h2 { background: var(--yellow); color: var(--ink); }
+.bonus-head ~ section > h2 { background: var(--lav); }
+
+/* panels: corner rivets + light top edge like a game UI */
+.win { --rivet: rgba(255, 241, 232, .35);
+  background:
+    linear-gradient(var(--rivet), var(--rivet)) 10px 10px / 6px 6px no-repeat,
+    linear-gradient(var(--rivet), var(--rivet)) calc(100% - 10px) 10px / 6px 6px no-repeat,
+    linear-gradient(var(--rivet), var(--rivet)) 10px calc(100% - 10px) / 6px 6px no-repeat,
+    linear-gradient(var(--rivet), var(--rivet)) calc(100% - 10px) calc(100% - 10px) / 6px 6px no-repeat,
+    linear-gradient(rgba(255, 255, 255, .07), transparent 40%),
+    var(--panel); }
+.stat.flip { background: var(--plum); }
+
+/* cards lift when you hover them */
+.stat, .bug, .quest, .skill, .timeline details, .flow li { transition: transform .15s steps(2); }
+.stat:hover, .bug:hover, .quest:hover, .skill:hover { transform: translate(-4px, -4px); }
+.flow li:hover { transform: translateY(-4px); }
+em { text-shadow: 2px 2px 0 var(--ink); }
+.big { text-shadow: 3px 3px 0 var(--ink); }
+.keys li::before { animation: blink 1.2s steps(1) infinite; }
+.lesson { animation: pulse 1.6s steps(2) infinite; }
+.icon { animation: bob 1.4s steps(2) infinite; }
+
+/* click FX */
+.coin-pop { position: fixed; z-index: 150; pointer-events: none; font-size: 10px; color: var(--yellow); text-shadow: 2px 2px 0 var(--ink); transform: translate(-50%, -50%); animation: coin .8s steps(8) forwards; }
+.coin-pop::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 4px; background: var(--yellow); box-shadow: inset -2px -2px 0 var(--orange); vertical-align: -1px; }
+@keyframes coin { to { transform: translate(-50%, -260%); opacity: 0; } }
+.bit { position: fixed; z-index: 150; width: 8px; height: 8px; pointer-events: none; animation: bit .6s steps(6) forwards; }
+@keyframes bit { to { transform: translate(var(--dx), var(--dy)); opacity: 0; } }
+.shake { animation: shake .3s steps(4) !important; }
+@keyframes shake { 25% { transform: translate(-6px, 2px); } 50% { transform: translate(5px, -3px); } 75% { transform: translate(-3px, 3px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .stars, .cloud, .s-title, .s-btn, .keys li::before, .lesson, .icon, .started .title h1 .ch, .title h1:hover .ch, .seen > h2, .seen .win > h2 { animation: none; }
+  .js main > section:not(.seen), .js .bonus-head:not(.seen) { opacity: 1; }
+  .js main > section.seen, .js .bonus-head.seen, .start-screen.bye { animation: none; }
+  .start-screen.bye { display: none; }
+}

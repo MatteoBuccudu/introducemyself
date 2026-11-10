@@ -8,8 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
+  <div id="start" class="start-screen" role="dialog" aria-modal="true" aria-label="Start screen">
+    <p class="px s-small">MB GAMES PRESENTS</p>
+    <p class="px s-title">MATTEO<br><span>BUCCUDU</span></p>
+    <p class="px s-sub">— INTRODUCE MYSELF —</p>
+    <button type="button" id="startBtn" class="pbtn s-btn">▶ PRESS START</button>
+    <p class="px s-hint">click or press any key</p>
+  </div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="land" aria-hidden="true"></div>
   <nav class="nav px">
     <a class="logo" href="#top">MB<b>.</b></a>
     <div class="links"><a href="#about">Me</a><a href="#coding">Passions</a><a href="#story">Story</a><a href="#goals">Future</a><a href="#bonus">Bonus</a></div>
@@ -32,9 +42,11 @@
         </div>
         <p id="favOut" class="fav-out" aria-live="polite">My answer: the computer. That's why this website looks like a video game!</p>
       </div>
+      <a class="pbtn go" href="#about">▶ Start</a>
       <p class="px status"><span class="blink">▶</span> STATUS: READY PLAYER ONE</p>
     </div>
     <div class="title-stage">
+      <div class="stage-sky" aria-hidden="true"><i class="stage-sun"></i><i class="cloud c1"></i><i class="cloud c2"></i></div>
       <button type="button" id="heroBtn" class="hero-btn" aria-label="Click the pixel hero to say hi"><canvas class="sprite-view" width="12" height="17"></canvas></button>
       <p id="bubble" class="bubble px" aria-live="polite">Click me!</p>
       <pre class="float-code" aria-hidden="true"><span class="k">while</span> (alive) {

@@ -29,13 +29,70 @@
   document.addEventListener('achieve', e => achieve(e.detail));
 
   // sections: animate stat bars + unlock "seen" achievements
+  // rootMargin instead of a ratio threshold so very tall sections still trigger
   const io = new IntersectionObserver(entries => entries.forEach(e => {
     if (!e.isIntersecting) return;
     e.target.classList.add('seen');
     if (e.target.dataset.ach) achieve(e.target.dataset.ach);
     io.unobserve(e.target);
-  }), { threshold: .3 });
-  $$('main > section').forEach(s => io.observe(s));
+  }), { rootMargin: '0px 0px -12% 0px' });
+  $$('main > section, .bonus-head').forEach(s => io.observe(s));
+
+  /* ---------- START SCREEN + TITLE LETTERS ---------- */
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const h1 = $('.title h1');
+  h1.setAttribute('aria-label', h1.textContent.replace(/\s+/g, ' ').trim());
+  let n = 0;
+  (function split(node) {
+    [...node.childNodes].forEach(ch => {
+      if (ch.nodeType === 1) return split(ch);
+      if (ch.nodeType !== 3 || !ch.textContent.trim()) return;
+      const frag = document.createDocumentFragment();
+      [...ch.textContent].forEach(l => {
+        const s = document.createElement('span');
+        s.className = 'ch'; s.setAttribute('aria-hidden', 'true');
+        s.style.setProperty('--i', n++); s.textContent = l;
+        frag.append(s);
+      });
+      ch.replaceWith(frag);
+    });
+  })(h1);
+
+  const start = $('#start');
+  const begin = () => {
+    if (start.classList.contains('bye')) return;
+    start.classList.add('bye');
+    document.body.classList.add('started');
+    removeEventListener('keydown', begin);
+    setTimeout(() => start.remove(), reduced ? 0 : 700);
+  };
+  start.addEventListener('click', begin);
+  addEventListener('keydown', begin);
+  $('#startBtn').focus({ preventScroll: true });
+
+  /* ---------- COINS: every click gives a pixel coin ---------- */
+  document.addEventListener('click', e => {
+    if (reduced || !e.target.closest('.pbtn, .bug, .stat, summary, .hero-btn, .roadmap label')) return;
+    const c = document.createElement('span');
+    c.className = 'coin-pop px'; c.textContent = '+1';
+    c.style.left = `${e.clientX}px`; c.style.top = `${e.clientY}px`;
+    document.body.append(c);
+    setTimeout(() => c.remove(), 800);
+  });
+  function burst(el) {
+    if (reduced) return;
+    const r = el.getBoundingClientRect();
+    for (let i = 0; i < 10; i++) {
+      const p = document.createElement('i');
+      const a = i / 10 * Math.PI * 2;
+      p.className = 'bit';
+      p.style.cssText = `left:${r.left + r.width / 2}px;top:${r.top + r.height / 2}px;--dx:${Math.cos(a) * 90}px;--dy:${Math.sin(a) * 70}px;background:${['#ffec27', '#00e436', '#ff004d', '#29adff'][i % 4]}`;
+      document.body.append(p);
+      setTimeout(() => p.remove(), 600);
+    }
+    const sec = el.closest('section');
+    sec.classList.remove('shake'); void sec.offsetWidth; sec.classList.add('shake');
+  }
 
   // XP bar = how far you scrolled
   const xp = $('#xpBar');
@@ -80,6 +137,7 @@
     b.onclick = () => {
       const on = b.getAttribute('aria-pressed') !== 'true';
       b.setAttribute('aria-pressed', on);
+      if (on) burst(b);
       const n = bugs.filter(x => x.getAttribute('aria-pressed') === 'true').length;
       $('#squashed').textContent = n;
       if (n === bugs.length) achieve('bugs');
