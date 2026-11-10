@@ -4,155 +4,154 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Matteo Buccudu — Code &amp; Photography</title>
-  <meta name="description" content="Matteo Buccudu: a computing enthusiast who loves coding and photography.">
+  <meta name="description" content="Matteo Buccudu: a computing enthusiast who loves coding and photography. Create your pixel hero and play the level.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
-
-  <nav class="nav">
-    <span class="logo">MB<b>.</b></span>
-    <div><a href="#about">About</a><a href="#skills">Skills</a><a href="#hello">Profile</a><a href="#code">Code</a></div>
+  <nav class="nav px">
+    <a class="logo" href="#top">MB<b>.EXE</b></a>
+    <div class="links"><a href="#create">Hero</a><a href="#play">Play</a><a href="#profile">Stats</a><a href="#quests">Quests</a><a href="#save">Save</a></div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-text">
-      <p class="tag"><span class="dot"></span> hello.world() — online</p>
-      <h1>Code <span class="amp">&amp;</span><br><span class="grad">Light.</span></h1>
-      <p class="lead">I'm <strong>Matteo Buccudu</strong>. I love computers. I write code. I take photos.</p>
-      <a class="btn" href="#about">Meet me ↓</a>
-      <p class="status"><i></i> STATUS: READY PLAYER ONE</p>
+  <!-- TITLE SCREEN -->
+  <header id="top" class="title">
+    <div class="title-text">
+      <p class="px tag">© 2026 MB GAMES · 1 PLAYER</p>
+      <h1 class="px">MATTEO<br><span>BUCCUDU</span></h1>
+      <p class="sub px">CODE <i>&amp;</i> LIGHT</p>
+      <p class="lead">I'm Matteo. I love computers. I write code. I take photos. Make your hero and explore my world.</p>
+      <ul class="menu px">
+        <li><a href="#create">▶ NEW HERO</a></li>
+        <li><a href="#play">▶ PLAY LEVEL 1-1</a></li>
+        <li><a href="#profile">▶ PLAYER STATS</a></li>
+      </ul>
+      <p class="px blink start">PRESS START</p>
     </div>
-
-    <div class="hero-visual" aria-hidden="true">
-      <div class="viewfinder">
-        <div class="photo"><div class="sun"></div><div class="mtn m1"></div><div class="mtn m2"></div><div class="mtn m3"></div></div>
-        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-        <div class="focus"></div>
-        <div class="hud top"><span><i class="rec"></i> REC</span><span>RAW · 4K</span></div>
-        <div class="hud bot"><span>ISO 100</span><span>f/1.8</span><span>1/250</span></div>
-      </div>
-      <pre class="float-code"><code><span class="k">while</span> (alive) {
-  <span class="f">code</span>();
-  <span class="f">shoot</span>();
-}</code></pre>
+    <div class="title-stage" aria-hidden="true">
+      <canvas class="sprite-view" width="12" height="17"></canvas>
+      <span class="px nameplate hero-name">PLAYER 1</span>
     </div>
   </header>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="track">
-      <span>CODING ✦ PHOTOGRAPHY ✦ CURIOSITY ✦ CREATIVITY ✦ COMPUTING ✦ DETAIL ✦ </span>
-      <span>CODING ✦ PHOTOGRAPHY ✦ CURIOSITY ✦ CREATIVITY ✦ COMPUTING ✦ DETAIL ✦ </span>
-    </div>
-  </div>
-
   <main>
-    <section id="about" class="bento">
-      <article class="card wide glow">
-        <h2><span class="n">01</span> About me</h2>
-        <p class="big">Computers are my <em>favourite game</em>.</p>
-        <p>I like to know how things work. Then I make my own things. I also love photos: I look, I wait, I click.</p>
-      </article>
-      <article class="card stat"><b>2</b><span>passions</span></article>
-      <article class="card stat"><b>∞</b><span>curiosity</span></article>
-    </section>
-
-    <section id="skills" class="bento duo">
-      <article class="card skill glow">
-        <div class="icon lens"></div>
-        <h3>Photography</h3>
-        <p>I love light. I take good photos.</p>
-        <ul><li>Light</li><li>Frames</li><li>Editing</li></ul>
-      </article>
-      <article class="card skill glow">
-        <div class="icon code">&lt;/&gt;</div>
-        <h3>Coding</h3>
-        <p>I write code. I solve problems.</p>
-        <ul><li>Problems</li><li>Web</li><li>Logic</li></ul>
-      </article>
-    </section>
-
-    <section id="hello" class="card quest glow">
-      <h2><span class="n">02</span> Hello, World! <code>identity.run()</code></h2>
-      <div class="trio">
-        <div class="mini">
-          <h4>&lt;/&gt; Identity</h4>
-          <p class="name">My name is Matteo Buccudu.</p>
-          <ul class="pills"><li>Coding</li><li>Photography</li><li>Computers</li></ul>
+    <!-- CHARACTER CREATOR -->
+    <section id="create" class="win">
+      <h2 class="px">01 · CREATE YOUR HERO</h2>
+      <div class="creator">
+        <div class="stage">
+          <canvas class="sprite-view big" width="12" height="17" role="img" aria-label="Preview of your pixel hero"></canvas>
+          <span class="px nameplate hero-name">PLAYER 1</span>
         </div>
-        <div class="mini">
-          <h4>🐛 Personal bug</h4>
-          <pre class="term"><code>$ run matteo.exe
-<span class="err">Error:</span> I can't leave home
-without my camera</code></pre>
-        </div>
-        <div class="mini">
-          <h4>⚡ Feature</h4>
-          <div class="facts">
-            <input type="radio" name="fact" id="ff1" checked><input type="radio" name="fact" id="ff2"><input type="radio" name="fact" id="ff3"><input type="radio" name="fact" id="ff4"><input type="radio" name="fact" id="ff5"><input type="radio" name="fact" id="ff6">
-            <div class="fact f1"><small class="ftag">About me</small><p>My bug: I never leave home without my camera.</p><label for="ff2" class="more">Another fun fact ↻</label></div>
-            <div class="fact f2"><small class="ftag">About me</small><p>My best stat is curiosity: 95%.</p><label for="ff3" class="more">Another fun fact ↻</label></div>
-            <div class="fact f3"><small class="ftag">About me</small><p>My skills: coding, photography and computers.</p><label for="ff4" class="more">Another fun fact ↻</label></div>
-            <div class="fact f4"><small class="ftag">Tech trivia</small><p>The first computer bug was a real moth. It was in 1947.</p><label for="ff5" class="more">Another fun fact ↻</label></div>
-            <div class="fact f5"><small class="ftag">Tech trivia</small><p>The first photo took many hours.</p><label for="ff6" class="more">Another fun fact ↻</label></div>
-            <div class="fact f6"><small class="ftag">Tech trivia</small><p>The first website was from 1991. It was only text!</p><label for="ff1" class="more">Another fun fact ↻</label></div>
+        <div class="opts">
+          <label class="opt"><span class="px">NAME</span><input id="name" class="px" maxlength="10" autocomplete="off" spellcheck="false"></label>
+          <div class="opt"><span class="px">SKIN</span><div class="swatches" data-opt="skin"></div></div>
+          <div class="opt"><span class="px">HAIR</span>
+            <div class="stepper" data-step="hair"><button type="button" class="pbtn sm" aria-label="Previous hair style">◀</button><output class="px"></output><button type="button" class="pbtn sm" aria-label="Next hair style">▶</button></div>
+          </div>
+          <div class="opt"><span class="px">COLOUR</span><div class="swatches" data-opt="hairC"></div></div>
+          <div class="opt"><span class="px">SHIRT</span><div class="swatches" data-opt="shirt"></div></div>
+          <div class="opt"><span class="px">PANTS</span><div class="swatches" data-opt="pants"></div></div>
+          <div class="opt"><span class="px">ITEM</span>
+            <div class="stepper" data-step="acc"><button type="button" class="pbtn sm" aria-label="Previous item">◀</button><output class="px"></output><button type="button" class="pbtn sm" aria-label="Next item">▶</button></div>
+          </div>
+          <div class="row">
+            <button type="button" id="random" class="pbtn alt">? RANDOM</button>
+            <a href="#play" class="pbtn">▶ PLAY</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="card quest">
-      <h2><span class="n">03</span> Character sheet <code>Me.md</code></h2>
+    <!-- LEVEL -->
+    <section id="play" class="win">
+      <h2 class="px">02 · LEVEL 1-1 · SUNSET CITY</h2>
+      <div class="game">
+        <canvas id="game" width="320" height="180" tabindex="0" aria-label="Playable level. Use the arrow keys or A and D to walk and space to jump. Read the signs to learn about Matteo."></canvas>
+        <div id="dlg" class="dlg" aria-live="polite" hidden><h3 class="px"></h3><p></p></div>
+      </div>
+      <div class="pad" aria-label="Touch controls">
+        <button type="button" class="pbtn" data-key="left" aria-label="Left">◀</button>
+        <button type="button" class="pbtn" data-key="right" aria-label="Right">▶</button>
+        <button type="button" class="pbtn alt jump" data-key="jump" aria-label="Jump">A</button>
+      </div>
+      <div class="row hint">
+        <p><kbd>←</kbd> <kbd>→</kbd> walk · <kbd>SPACE</kbd> jump · read the signs · collect the bits</p>
+        <button type="button" id="restart" class="pbtn sm alt">↺ RESTART</button>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="profile" class="win">
+      <h2 class="px">03 · PLAYER STATS · ME.MD</h2>
       <div class="sheet">
         <div class="stats">
-          <h4>Stats bar</h4>
-          <div class="bar" style="--v:75%"><span>Coding</span><b>75%</b></div>
-          <div class="bar" style="--v:80%"><span>Photography</span><b>80%</b></div>
-          <div class="bar" style="--v:85%"><span>Problem solving</span><b>85%</b></div>
-          <div class="bar" style="--v:95%"><span>Curiosity</span><b>95%</b></div>
-          <div class="bar" style="--v:90%"><span>Sleep resistance</span><b>90%</b></div>
+          <div class="bar" style="--v:75%"><span>Coding</span><i></i><b>75</b></div>
+          <div class="bar" style="--v:80%"><span>Photography</span><i></i><b>80</b></div>
+          <div class="bar" style="--v:85%"><span>Problem solving</span><i></i><b>85</b></div>
+          <div class="bar" style="--v:95%"><span>Curiosity</span><i></i><b>95</b></div>
+          <div class="bar" style="--v:90%"><span>Sleep resistance</span><i></i><b>90</b></div>
         </div>
-        <div class="perks">
-          <h4>Perks &amp; badges</h4>
-          <ul class="pills badges"><li>📷 Light Chaser</li><li>⌨️ Keyboard Warrior</li><li>🐛 Bug Hunter</li><li>🎯 Detail Lover</li></ul>
-          <h4>Interests</h4>
-          <ul class="pills"><li>Computing</li><li>Coding</li><li>Photography</li></ul>
+        <div>
+          <h3 class="px h">INVENTORY</h3>
+          <ul class="inv">
+            <li><span>📷</span>Light Chaser</li>
+            <li><span>⌨️</span>Keyboard Warrior</li>
+            <li><span>🐛</span>Bug Hunter</li>
+            <li><span>🎯</span>Detail Lover</li>
+          </ul>
+          <h3 class="px h">CLASS</h3>
+          <p>Computers are my <em>favourite game</em>. I like to know how things work. Then I make my own things. I also love photos: I look, I wait, I click.</p>
         </div>
       </div>
     </section>
 
-    <section class="card quest">
-      <h2><span class="n">04</span> Pixel avatar <code>32×32</code></h2>
-      <div class="stage">
-        <div class="sprite-wrap" role="img" aria-label="A 32 by 32 pixel art retro camera with a green code symbol"><div class="sprite"></div></div>
-        <ul class="specs">
-          <li><b>Tool:</b> CSS</li>
-          <li><b>Design:</b> a retro game picture, 32×32 pixels</li>
-          <li><b>Detail:</b> a camera with a <code>&lt;&gt;</code> code sign: my two passions</li>
-        </ul>
+    <!-- QUESTS -->
+    <section id="quests" class="win">
+      <h2 class="px">04 · QUEST LOG · HELLO, WORLD!</h2>
+      <div class="trio">
+        <article class="quest">
+          <h3 class="px">IDENTITY</h3>
+          <p>My name is Matteo Buccudu.</p>
+          <ul class="pills"><li>Coding</li><li>Photography</li><li>Computers</li></ul>
+        </article>
+        <article class="quest">
+          <h3 class="px">PERSONAL BUG</h3>
+          <pre class="term">$ run matteo.exe
+<span class="err">Error:</span> I can't leave home
+without my camera</pre>
+        </article>
+        <article class="quest">
+          <h3 class="px">FUN FACT</h3>
+          <small id="ftag" class="px ftag">ABOUT ME</small>
+          <p id="fact">My best stat is curiosity: 95%.</p>
+          <button type="button" id="nextFact" class="pbtn sm">NEXT ↻</button>
+        </article>
       </div>
     </section>
 
-    <section id="code" class="card">
-      <h2><span class="n">05</span> My profile in code <code>matteo.js</code></h2>
-      <pre><code><span class="k">const</span> matteo = {
+    <!-- SAVE FILE -->
+    <section id="save" class="win">
+      <h2 class="px">05 · SAVE FILE · MATTEO.JS</h2>
+      <pre class="code"><span class="k">const</span> matteo = {
   name:    <span class="s">"Matteo Buccudu"</span>,
   loves:   <span class="s">"Computing"</span>,
   skills:  [<span class="s">"Coding"</span>, <span class="s">"Photography"</span>],
   mindset: <span class="s">"Curious, patient, creative"</span>
 };
 
-<span class="c">// Two passions, one goal: create something great.</span><span class="caret"></span></code></pre>
+<span class="c">// Two passions, one goal: create something great.</span><span class="caret blink">█</span></pre>
     </section>
 
-    <section class="card closing glow">
-      <h2><span class="n">06</span> Thank you</h2>
-      <p class="big">Thank you! Every big idea starts with <em>curiosity</em>.</p>
+    <section class="win credits">
+      <h2 class="px">06 · CREDITS</h2>
+      <p class="px big">THANK YOU<br>FOR PLAYING!</p>
+      <p>Every big idea starts with <em>curiosity</em>.</p>
     </section>
   </main>
 
-  <footer class="foot">© Matteo Buccudu · Built with HTML &amp; CSS</footer>
+  <footer class="foot px">© MATTEO BUCCUDU · HTML + CSS + JS · <span class="blink">INSERT COIN</span></footer>
+  <script src="game.js"></script>
 </body>
 </html>
