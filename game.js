@@ -107,12 +107,12 @@
 
   /* ---------- FUN FACTS ---------- */
   const FACTS = [
-    ['ABOUT ME', 'My best stat is curiosity: 95%.'],
-    ['ABOUT ME', 'My skills: coding, photography and computers.'],
-    ['TECH TRIVIA', 'The first computer bug was a real moth. It was in 1947.'],
-    ['TECH TRIVIA', 'The first photo took many hours.'],
-    ['TECH TRIVIA', 'The first website was from 1991. It was only text!'],
-    ['ABOUT ME', 'My bug: I never leave home without my camera.'],
+    ['About me', 'My bug: I never leave home without my camera.'],
+    ['About me', 'My best stat is curiosity: 95%.'],
+    ['About me', 'My skills: coding, photography and computers.'],
+    ['Tech trivia', 'The first computer bug was a real moth. It was in 1947.'],
+    ['Tech trivia', 'The first photo took many hours.'],
+    ['Tech trivia', 'The first website was from 1991. It was only text!'],
   ];
   let fi = 0;
   $('#nextFact').onclick = () => { fi = (fi + 1) % FACTS.length; $('#ftag').textContent = FACTS[fi][0]; $('#fact').textContent = FACTS[fi][1]; };
@@ -261,6 +261,7 @@
       if (i !== cur) { cur = i; if (i >= 0) { read.add(i); P.check = SIGNS[i].x; dialog(SIGNS[i].title, SIGNS[i].text()); } else if (!dlgH.textContent.startsWith('ITEM')) dialog(null); }
       if (P.x + 6 > FLAG) {
         won = true;
+        document.dispatchEvent(new CustomEvent('achieve', { detail: 'level' }));
         const got = coins.filter(c => c.got).length;
         dialog('★ LEVEL CLEAR ★', `Thank you for playing, ${hero.name}! Bits: ${got}/${coins.length} · Signs: ${read.size}/${SIGNS.length}. Every big idea starts with curiosity.`);
       }

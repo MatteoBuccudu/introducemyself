@@ -4,71 +4,221 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Matteo Buccudu — Code &amp; Photography</title>
-  <meta name="description" content="Matteo Buccudu: a computing enthusiast who loves coding and photography. Create your pixel hero and play the level.">
+  <meta name="description" content="Matteo Buccudu: a computing enthusiast who loves coding and photography.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="nav px">
-    <a class="logo" href="#top">MB<b>.EXE</b></a>
-    <div class="links"><a href="#create">Hero</a><a href="#play">Play</a><a href="#profile">Stats</a><a href="#quests">Quests</a><a href="#save">Save</a></div>
+    <a class="logo" href="#top">MB<b>.</b></a>
+    <div class="links"><a href="#about">About</a><a href="#story">Story</a><a href="#bugs">Bugs</a><a href="#photo">Photo</a><a href="#terminal">Code</a><a href="#quiz">Quiz</a></div>
+    <span class="trophies" title="Achievements unlocked">🏆 <b id="trophyCount">0</b>/8</span>
+    <div class="xp" aria-hidden="true"><i id="xpBar"></i></div>
   </nav>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
 
-  <!-- TITLE SCREEN -->
   <header id="top" class="title">
     <div class="title-text">
-      <p class="px tag">© 2026 MB GAMES · 1 PLAYER</p>
-      <h1 class="px">MATTEO<br><span>BUCCUDU</span></h1>
-      <p class="sub px">CODE <i>&amp;</i> LIGHT</p>
-      <p class="lead">I'm Matteo. I love computers. I write code. I take photos. Make your hero and explore my world.</p>
-      <ul class="menu px">
-        <li><a href="#create">▶ NEW HERO</a></li>
-        <li><a href="#play">▶ PLAY LEVEL 1-1</a></li>
-        <li><a href="#profile">▶ PLAYER STATS</a></li>
-      </ul>
-      <p class="px blink start">PRESS START</p>
+      <p class="px tag"><span class="dot"></span> hello.world() — online</p>
+      <h1 class="px">Code <i>&amp;</i><br><span>Light.</span></h1>
+      <p class="lead">I'm <strong>Matteo Buccudu</strong>. I love computers. I write code. I take photos.</p>
+      <a class="pbtn" href="#about">Meet me ↓</a>
+      <p class="px status"><span class="blink">▶</span> STATUS: READY PLAYER ONE</p>
     </div>
-    <div class="title-stage" aria-hidden="true">
-      <canvas class="sprite-view" width="12" height="17"></canvas>
-      <span class="px nameplate hero-name">PLAYER 1</span>
+    <div class="title-stage">
+      <button type="button" id="heroBtn" class="hero-btn" aria-label="Click the pixel hero to say hi"><canvas class="sprite-view" width="12" height="17"></canvas></button>
+      <p id="bubble" class="bubble px" aria-live="polite">Click me!</p>
+      <pre class="float-code" aria-hidden="true"><span class="k">while</span> (alive) {
+  <span class="f">code</span>();
+  <span class="f">shoot</span>();
+}</pre>
     </div>
   </header>
 
+  <div class="marquee px" aria-hidden="true">
+    <div class="track">
+      <span>CODING ✦ PHOTOGRAPHY ✦ CURIOSITY ✦ CREATIVITY ✦ COMPUTING ✦ DETAIL ✦ </span>
+      <span>CODING ✦ PHOTOGRAPHY ✦ CURIOSITY ✦ CREATIVITY ✦ COMPUTING ✦ DETAIL ✦ </span>
+    </div>
+  </div>
+
   <main>
-    <!-- CHARACTER CREATOR -->
+    <section id="about" class="bento" data-ach="about">
+      <article class="win wide">
+        <h2 class="px">01 · About me</h2>
+        <p class="big">Computers are my <em>favourite game</em>.</p>
+        <p>I like to know how things work. Then I make my own things. I also love photos: I look, I wait, I click.</p>
+      </article>
+      <button type="button" class="win stat" data-alt="coding + photos"><b class="px">2</b><span>passions</span></button>
+      <button type="button" class="win stat" data-alt="never ends"><b class="px">∞</b><span>curiosity</span></button>
+    </section>
+
+    <section id="skills" class="duo">
+      <article class="win skill">
+        <div class="icon px" aria-hidden="true">📷</div>
+        <h3 class="px">Photography</h3>
+        <p>I love light. I take good photos.</p>
+        <p>My favourite moment is the <em>golden hour</em>, just before the sunset. The light is soft and warm.</p>
+        <ul class="pills"><li>Light</li><li>Frames</li><li>Editing</li></ul>
+      </article>
+      <article class="win skill">
+        <div class="icon px" aria-hidden="true">&lt;/&gt;</div>
+        <h3 class="px">Coding</h3>
+        <p>I write code. I solve problems.</p>
+        <p>When a program finally works after many tries, it feels like <em>winning a level</em>.</p>
+        <ul class="pills"><li>Problems</li><li>Web</li><li>Logic</li></ul>
+      </article>
+    </section>
+
+    <section id="story" class="win">
+      <h2 class="px">02 · My story <code>history.log</code></h2>
+      <p class="intro">Every hero has a story. Here is mine, in four levels. Click a level to open it.</p>
+      <div class="timeline">
+        <details><summary class="px">Level 1 · The first computer</summary><p>When I was a child, I saw a computer for the first time. I pressed every key. I wanted to know what was inside.</p></details>
+        <details><summary class="px">Level 2 · The first code</summary><p>Then I wrote my first program. It only said "Hello, World!". But for me, it was magic.</p></details>
+        <details><summary class="px">Level 3 · The first camera</summary><p>Later I got my first camera. I took photos of everything: the sky, my street, my friends. Many photos were bad. I learned from all of them.</p></details>
+        <details><summary class="px">Level 4 · Today</summary><p>Today I mix my two passions. I build websites, like this one, and I take photos with good light. I'm still learning every day.</p></details>
+      </div>
+    </section>
+
+    <section id="hello" class="win">
+      <h2 class="px">03 · Hello, World! <code>identity.run()</code></h2>
+      <div class="trio">
+        <article class="quest">
+          <h3 class="px">&lt;/&gt; Identity</h3>
+          <p>My name is Matteo Buccudu.</p>
+          <ul class="pills"><li>Coding</li><li>Photography</li><li>Computers</li></ul>
+        </article>
+        <article class="quest">
+          <h3 class="px">🐛 Personal bug</h3>
+          <pre class="term">$ run matteo.exe
+<span class="err">Error:</span> I can't leave home
+without my camera</pre>
+        </article>
+        <article class="quest">
+          <h3 class="px">⚡ Feature</h3>
+          <small id="ftag" class="px ftag">About me</small>
+          <p id="fact">My bug: I never leave home without my camera.</p>
+          <button type="button" id="nextFact" class="pbtn sm">Another fun fact ↻</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="win">
+      <h2 class="px">04 · Character sheet <code>Me.md</code></h2>
+      <div class="sheet">
+        <div class="stats">
+          <h3 class="px h">Stats bar</h3>
+          <div class="bar" style="--v:75%"><span>Coding</span><i></i><b>75%</b></div>
+          <div class="bar" style="--v:80%"><span>Photography</span><i></i><b>80%</b></div>
+          <div class="bar" style="--v:85%"><span>Problem solving</span><i></i><b>85%</b></div>
+          <div class="bar" style="--v:95%"><span>Curiosity</span><i></i><b>95%</b></div>
+          <div class="bar" style="--v:90%"><span>Sleep resistance</span><i></i><b>90%</b></div>
+        </div>
+        <div>
+          <h3 class="px h">Perks &amp; badges</h3>
+          <ul class="inv">
+            <li><span>📷</span>Light Chaser</li>
+            <li><span>⌨️</span>Keyboard Warrior</li>
+            <li><span>🐛</span>Bug Hunter</li>
+            <li><span>🎯</span>Detail Lover</li>
+          </ul>
+          <h3 class="px h">Interests</h3>
+          <ul class="pills"><li>Computing</li><li>Coding</li><li>Photography</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="bugs" class="win">
+      <h2 class="px">05 · Known bugs <code>bugs.json</code></h2>
+      <p class="intro">Every program has bugs. People have bugs too! These are the funny bugs of a coder and photographer. Click a bug to squash it.</p>
+      <div class="bugs">
+        <button type="button" class="bug"><b class="px">#01 It works on my machine</b><span>My code works on my computer. On your computer? Nobody knows.</span><small class="px">Patch: give everyone my computer.</small></button>
+        <button type="button" class="bug"><b class="px">#02 Just one more photo</b><span>I say: "just one more photo". Then I take two hundred.</span><small class="px">Patch: buy a bigger memory card.</small></button>
+        <button type="button" class="bug"><b class="px">#03 Storage full</b><span>My phone is full: three thousand photos of the same sunset.</span><small class="px">Patch: delete one, take ten more.</small></button>
+        <button type="button" class="bug"><b class="px">#04 Missing semicolon</b><span>I look for a bug for one hour. The problem is one small ;</span><small class="px">Patch: glasses.exe installed.</small></button>
+        <button type="button" class="bug"><b class="px">#05 Sleep.exe not found</b><span>"Five more minutes of code" means two more hours.</span><small class="px">Patch: won't fix.</small></button>
+        <button type="button" class="bug"><b class="px">#06 Golden hour alert</b><span>When the sun goes down, I stop talking and run outside with my camera.</span><small class="px">Patch: my friends now come with me.</small></button>
+        <button type="button" class="bug"><b class="px">#07 Ctrl+Z in real life</b><span>When I drop my ice cream, my fingers look for Ctrl+Z.</span><small class="px">Patch: not available in real life.</small></button>
+        <button type="button" class="bug"><b class="px">#08 Too many tabs</b><span>I have 47 tabs open. They are all very important.</span><small class="px">Patch: open a new window.</small></button>
+      </div>
+      <p class="px counter">Bugs squashed: <b id="squashed">0</b>/8</p>
+    </section>
+
+    <section id="photo" class="win">
+      <h2 class="px">06 · Photo mode <code>camera.app</code></h2>
+      <p class="intro">A good photo needs three things: light, a frame and patience. Take a photo: every photo gives you a tip.</p>
+      <div class="photo-mode">
+        <div id="vf" class="viewfinder t0" aria-hidden="true">
+          <div class="scene"><i class="sun"></i><i class="mtn"></i></div>
+          <span class="hud top px"><span><i class="rec"></i> REC</span><span>RAW · 4K</span></span>
+          <span class="hud bot px"><span>ISO 100</span><span>f/1.8</span><span>1/250</span></span>
+          <span class="focus"></span>
+        </div>
+        <div class="shots">
+          <button type="button" id="shutter" class="pbtn">📷 Take a photo</button>
+          <p id="tip" class="tip" aria-live="polite">Tip: look at the light first, then at the subject.</p>
+          <div id="roll" class="roll" aria-label="Your photos"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="terminal" class="win" >
+      <h2 class="px">07 · Terminal <code>matteo.sh</code></h2>
+      <p class="intro">This part is for coders. Type a command and press Enter, or click a button. Try <kbd>help</kbd>.</p>
+      <div class="console">
+        <pre id="out" aria-live="polite">Welcome to matteo.sh v1.0
+Type "help" to see the commands.
+</pre>
+        <form id="cmd" class="prompt"><label for="cmdIn">$</label><input id="cmdIn" autocomplete="off" spellcheck="false" autocapitalize="off" aria-label="Command"></form>
+      </div>
+      <div class="quick">
+        <button type="button" class="pbtn sm" data-cmd="help">help</button>
+        <button type="button" class="pbtn sm" data-cmd="about">about</button>
+        <button type="button" class="pbtn sm" data-cmd="skills">skills</button>
+        <button type="button" class="pbtn sm" data-cmd="joke">joke</button>
+        <button type="button" class="pbtn sm" data-cmd="coffee">coffee</button>
+        <button type="button" class="pbtn sm alt" data-cmd="clear">clear</button>
+      </div>
+    </section>
+
     <section id="create" class="win">
-      <h2 class="px">01 · CREATE YOUR HERO</h2>
+      <h2 class="px">08 · Pixel avatar <code>12×17</code></h2>
       <div class="creator">
         <div class="stage">
-          <canvas class="sprite-view big" width="12" height="17" role="img" aria-label="Preview of your pixel hero"></canvas>
+          <canvas class="sprite-view big" width="12" height="17" role="img" aria-label="Preview of your pixel avatar"></canvas>
           <span class="px nameplate hero-name">PLAYER 1</span>
         </div>
         <div class="opts">
-          <label class="opt"><span class="px">NAME</span><input id="name" class="px" maxlength="10" autocomplete="off" spellcheck="false"></label>
-          <div class="opt"><span class="px">SKIN</span><div class="swatches" data-opt="skin"></div></div>
-          <div class="opt"><span class="px">HAIR</span>
+          <ul class="specs">
+            <li><b>Tool:</b> HTML canvas</li>
+            <li><b>Design:</b> a retro game picture, 12×17 pixels</li>
+            <li><b>Detail:</b> pick a camera: one of my two passions. Make your own avatar!</li>
+          </ul>
+          <label class="opt"><span class="px">Name</span><input id="name" class="px" maxlength="10" autocomplete="off" spellcheck="false"></label>
+          <div class="opt"><span class="px">Skin</span><div class="swatches" data-opt="skin"></div></div>
+          <div class="opt"><span class="px">Hair</span>
             <div class="stepper" data-step="hair"><button type="button" class="pbtn sm" aria-label="Previous hair style">◀</button><output class="px"></output><button type="button" class="pbtn sm" aria-label="Next hair style">▶</button></div>
           </div>
-          <div class="opt"><span class="px">COLOUR</span><div class="swatches" data-opt="hairC"></div></div>
-          <div class="opt"><span class="px">SHIRT</span><div class="swatches" data-opt="shirt"></div></div>
-          <div class="opt"><span class="px">PANTS</span><div class="swatches" data-opt="pants"></div></div>
-          <div class="opt"><span class="px">ITEM</span>
+          <div class="opt"><span class="px">Colour</span><div class="swatches" data-opt="hairC"></div></div>
+          <div class="opt"><span class="px">Shirt</span><div class="swatches" data-opt="shirt"></div></div>
+          <div class="opt"><span class="px">Pants</span><div class="swatches" data-opt="pants"></div></div>
+          <div class="opt"><span class="px">Item</span>
             <div class="stepper" data-step="acc"><button type="button" class="pbtn sm" aria-label="Previous item">◀</button><output class="px"></output><button type="button" class="pbtn sm" aria-label="Next item">▶</button></div>
           </div>
           <div class="row">
-            <button type="button" id="random" class="pbtn alt">? RANDOM</button>
-            <a href="#play" class="pbtn">▶ PLAY</a>
+            <button type="button" id="random" class="pbtn alt">? Random</button>
+            <a href="#play" class="pbtn">▶ Play</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- LEVEL -->
     <section id="play" class="win">
-      <h2 class="px">02 · LEVEL 1-1 · SUNSET CITY</h2>
+      <h2 class="px">09 · Bonus level <code>1-1</code></h2>
       <div class="game">
-        <canvas id="game" width="320" height="180" tabindex="0" aria-label="Playable level. Use the arrow keys or A and D to walk and space to jump. Read the signs to learn about Matteo."></canvas>
+        <canvas id="game" width="320" height="180" tabindex="0" aria-label="Optional playable level. Use the arrow keys or A and D to walk and space to jump."></canvas>
         <div id="dlg" class="dlg" aria-live="polite" hidden><h3 class="px"></h3><p></p></div>
       </div>
       <div class="pad" aria-label="Touch controls">
@@ -78,62 +228,12 @@
       </div>
       <div class="row hint">
         <p><kbd>←</kbd> <kbd>→</kbd> walk · <kbd>SPACE</kbd> jump · read the signs · collect the bits</p>
-        <button type="button" id="restart" class="pbtn sm alt">↺ RESTART</button>
+        <button type="button" id="restart" class="pbtn sm alt">↺ Restart</button>
       </div>
     </section>
 
-    <!-- STATS -->
-    <section id="profile" class="win">
-      <h2 class="px">03 · PLAYER STATS · ME.MD</h2>
-      <div class="sheet">
-        <div class="stats">
-          <div class="bar" style="--v:75%"><span>Coding</span><i></i><b>75</b></div>
-          <div class="bar" style="--v:80%"><span>Photography</span><i></i><b>80</b></div>
-          <div class="bar" style="--v:85%"><span>Problem solving</span><i></i><b>85</b></div>
-          <div class="bar" style="--v:95%"><span>Curiosity</span><i></i><b>95</b></div>
-          <div class="bar" style="--v:90%"><span>Sleep resistance</span><i></i><b>90</b></div>
-        </div>
-        <div>
-          <h3 class="px h">INVENTORY</h3>
-          <ul class="inv">
-            <li><span>📷</span>Light Chaser</li>
-            <li><span>⌨️</span>Keyboard Warrior</li>
-            <li><span>🐛</span>Bug Hunter</li>
-            <li><span>🎯</span>Detail Lover</li>
-          </ul>
-          <h3 class="px h">CLASS</h3>
-          <p>Computers are my <em>favourite game</em>. I like to know how things work. Then I make my own things. I also love photos: I look, I wait, I click.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUESTS -->
-    <section id="quests" class="win">
-      <h2 class="px">04 · QUEST LOG · HELLO, WORLD!</h2>
-      <div class="trio">
-        <article class="quest">
-          <h3 class="px">IDENTITY</h3>
-          <p>My name is Matteo Buccudu.</p>
-          <ul class="pills"><li>Coding</li><li>Photography</li><li>Computers</li></ul>
-        </article>
-        <article class="quest">
-          <h3 class="px">PERSONAL BUG</h3>
-          <pre class="term">$ run matteo.exe
-<span class="err">Error:</span> I can't leave home
-without my camera</pre>
-        </article>
-        <article class="quest">
-          <h3 class="px">FUN FACT</h3>
-          <small id="ftag" class="px ftag">ABOUT ME</small>
-          <p id="fact">My best stat is curiosity: 95%.</p>
-          <button type="button" id="nextFact" class="pbtn sm">NEXT ↻</button>
-        </article>
-      </div>
-    </section>
-
-    <!-- SAVE FILE -->
-    <section id="save" class="win">
-      <h2 class="px">05 · SAVE FILE · MATTEO.JS</h2>
+    <section id="code" class="win">
+      <h2 class="px">10 · My profile in code <code>matteo.js</code></h2>
       <pre class="code"><span class="k">const</span> matteo = {
   name:    <span class="s">"Matteo Buccudu"</span>,
   loves:   <span class="s">"Computing"</span>,
@@ -144,14 +244,34 @@ without my camera</pre>
 <span class="c">// Two passions, one goal: create something great.</span><span class="caret blink">█</span></pre>
     </section>
 
-    <section class="win credits">
-      <h2 class="px">06 · CREDITS</h2>
-      <p class="px big">THANK YOU<br>FOR PLAYING!</p>
-      <p>Every big idea starts with <em>curiosity</em>.</p>
+    <section id="goals" class="win">
+      <h2 class="px">11 · Next level <code>roadmap.md</code></h2>
+      <p class="intro">These are my quests for the future. Tick a quest when you think I can do it!</p>
+      <ul class="roadmap">
+        <li><label><input type="checkbox"> Learn a new programming language.</label></li>
+        <li><label><input type="checkbox"> Build a real game, from zero.</label></li>
+        <li><label><input type="checkbox"> Make a photo exhibition with my best photos.</label></li>
+        <li><label><input type="checkbox"> Create an app that mixes code and photos.</label></li>
+        <li><label><input type="checkbox"> Keep being curious. Always.</label></li>
+      </ul>
+      <div class="bar road"><span class="px">Progress</span><i id="roadBar" style="--v:0%"></i><b id="roadNum">0/5</b></div>
+    </section>
+
+    <section id="quiz" class="win">
+      <h2 class="px">12 · Quiz <code>boss_fight.exe</code></h2>
+      <p class="intro">Boss fight! Were you listening? Answer three questions about me.</p>
+      <div id="quizBox" class="quiz" aria-live="polite"></div>
+    </section>
+
+    <section class="win credits" data-ach="end">
+      <h2 class="px">13 · Thank you</h2>
+      <p class="big">Thank you! Every big idea starts with <em>curiosity</em>.</p>
+      <p>Two passions, one goal: create something great. Any questions?</p>
     </section>
   </main>
 
-  <footer class="foot px">© MATTEO BUCCUDU · HTML + CSS + JS · <span class="blink">INSERT COIN</span></footer>
+  <footer class="foot px">© Matteo Buccudu · Built with HTML, CSS &amp; JS</footer>
   <script src="game.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
