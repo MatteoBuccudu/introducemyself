@@ -172,17 +172,6 @@ pre { background: rgba(0, 0, 0, .5); border: 1px solid var(--line); border-radiu
 .status { margin-top: 1.6rem; font: 400 .65rem "Press Start 2P", monospace; color: #3dff9a; display: flex; align-items: center; gap: .7rem; }
 .status i { width: 10px; height: 10px; border-radius: 50%; background: #3dff9a; box-shadow: 0 0 12px #3dff9a; animation: blink 1.2s infinite; }
 
-.quests-head { text-align: center; display: grid; gap: .8rem; justify-items: center; margin: 3rem 0 .5rem; }
-.quests-head p:last-child { color: var(--mute); max-width: 520px; }
-.pix { font: 400 clamp(1.2rem, 3.6vw, 2.1rem)/1.4 "Press Start 2P", monospace; text-transform: none; letter-spacing: 0; color: var(--text); display: block; }
-
-.qhead { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; align-items: center; }
-.qtag { font: 400 .68rem "Press Start 2P", monospace; color: var(--b); background: rgba(0, 229, 255, .1); border: 1px solid rgba(0, 229, 255, .4); padding: .55rem .8rem; border-radius: 99px; }
-.qtag.q2 { color: #b9a4ff; background: rgba(124, 92, 255, .14); border-color: rgba(124, 92, 255, .5); }
-.qtag.q3 { color: var(--o); background: rgba(255, 179, 64, .12); border-color: rgba(255, 179, 64, .5); }
-.diff { font: 600 .8rem "JetBrains Mono", monospace; color: var(--mute); }
-.qtitle { font-size: clamp(1.5rem, 3.4vw, 2.2rem); letter-spacing: -.03em; }
-.qtitle code { font: 400 .55em "JetBrains Mono", monospace; color: var(--b); }
 .quest h4 { font: 600 .85rem "JetBrains Mono", monospace; color: var(--text); text-transform: uppercase; letter-spacing: .08em; }
 
 .trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
