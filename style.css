@@ -155,8 +155,9 @@ pre { background: rgba(0, 0, 0, .5); border: 1px solid var(--line); border-radiu
 
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
-  .hero-visual { max-width: 420px; margin: 0 auto; }
-  .float-code { left: 0; }
+  .hero-visual { width: 100%; max-width: 420px; margin: 0 auto; }
+  .float-code { left: 0; bottom: -26%; }
+  .hero-visual { margin-bottom: 7rem; }
   .bento { grid-template-columns: 1fr 1fr; }
   .bento .wide { grid-column: span 2; }
   .nav div a:first-child { display: none; }
