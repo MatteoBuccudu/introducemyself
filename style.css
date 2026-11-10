@@ -97,7 +97,7 @@ kbd { font: inherit; background: var(--ink); padding: 0 6px; box-shadow: var(--e
 .skill h3 { font-size: 14px; color: var(--yellow); }
 .icon { width: 56px; height: 56px; display: grid; place-items: center; font-size: 22px; background: var(--ink); color: var(--green); box-shadow: var(--edge); margin: 4px; }
 .win > h2 code { font: inherit; color: var(--yellow); margin-left: 6px; }
-.win p { font-size: 24px; }
+.win p:where(:not(.px)) { font-size: 24px; }
 .specs { list-style: none; display: grid; gap: 4px; margin-bottom: 8px; }
 .specs b { color: var(--yellow); font-weight: 400; }
 
@@ -302,3 +302,28 @@ body.flash::before { content: ""; position: fixed; inset: 0; z-index: 90; backgr
   .bar i { transition: none; }
   body.flash::before { display: none; }
 }
+
+/* ===== SPEECH-ALIGNED KEYWORDS ===== */
+.skill { padding-top: 44px; }
+.ask { margin: 8px 0 4px; display: grid; gap: 14px; }
+.q-title { font-size: 12px; line-height: 1.6; color: var(--yellow); }
+.ask .answers .pbtn { font-size: 10px; }
+.fav-out { min-height: 2.6em; color: var(--gray); }
+.keys { list-style: none; display: grid; gap: 8px; }
+.keys li { font-size: 26px; line-height: 1.2; padding-left: 26px; position: relative; }
+.keys li::before { content: "▸"; position: absolute; left: 0; color: var(--red); }
+.flow { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 10px; margin: 6px 0; }
+.flow li { position: relative; background: var(--ink); color: var(--cream); padding: 10px 12px; box-shadow: var(--edge); margin: 4px; }
+.flow li:last-child { background: var(--green); color: var(--ink); }
+.flow li + li::before { content: "→"; position: absolute; left: -24px; top: 50%; transform: translateY(-50%); color: var(--yellow); font-family: "VT323", monospace; font-size: 24px; }
+.lesson { font-size: 10px; line-height: 1.6; color: var(--ink); background: var(--yellow); padding: 8px 10px; justify-self: start; box-shadow: var(--edge); margin: 4px; }
+.main-bugs .bug span { font-size: 26px; }
+.more { margin-top: 20px; }
+.more summary { font-size: 10px; color: var(--blue); cursor: pointer; padding: 6px 0 16px; list-style: none; }
+.more summary::-webkit-details-marker { display: none; }
+.main-goal { color: var(--yellow); }
+.main-goal small { font-size: 8px; background: var(--red); color: var(--cream); padding: 4px 6px; margin-left: 6px; }
+.big-pills li { font-size: 28px; padding: 4px 16px; }
+#sum .flow { font-size: 11px; margin-top: 18px; }
+.bonus-head { text-align: center; padding: 30px 0 0; }
+.bonus-head .px { font-size: clamp(16px, 3vw, 26px); color: var(--yellow); text-shadow: 4px 4px 0 var(--red); margin-bottom: 12px; }

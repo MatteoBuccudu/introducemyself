@@ -51,6 +51,14 @@
     $('#bubble').textContent = LINES[li++ % LINES.length];
   };
 
+  /* ---------- HERO: favourite game question ---------- */
+  const FAV = {
+    football: '⚽ Cool! My answer is different: the computer.',
+    games: '🎮 Nice! For me, the best game is the computer.',
+    pc: '💻 Me too! That\'s why this website looks like a video game.',
+  };
+  $$('[data-fav]').forEach(b => b.onclick = () => { $('#favOut').textContent = FAV[b.dataset.fav]; });
+
   /* ---------- ABOUT: flip the stat cards ---------- */
   $$('.stat[data-alt]').forEach(s => {
     const span = s.querySelector('span'), orig = span.textContent;
@@ -66,6 +74,7 @@
 
   /* ---------- BUGS: squash them ---------- */
   const bugs = $$('.bug');
+  $('#bugTotal').textContent = bugs.length;
   bugs.forEach(b => {
     b.setAttribute('aria-pressed', 'false');
     b.onclick = () => {
@@ -146,8 +155,8 @@
   /* ---------- QUIZ ---------- */
   const QUIZ = [
     ['What do I never leave home without?', ['My keyboard', 'My camera', 'My rubber duck'], 1],
-    ['What is my best stat?', ['Coding', 'Sleep resistance', 'Curiosity'], 2],
-    ['What was the first computer bug?', ['A real moth', 'A virus', 'A missing ;'], 0],
+    ['What is my best quality?', ['Speed', 'Curiosity', 'Sleep'], 1],
+    ['What did my first program say?', ['Game over', 'Good morning', 'Hello, World!'], 2],
   ];
   const box = $('#quizBox');
   let qi = 0, score = 0;
