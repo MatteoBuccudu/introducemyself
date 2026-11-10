@@ -169,6 +169,12 @@ pre { background: rgba(0, 0, 0, .5); border: 1px solid var(--line); border-radiu
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
 /* ===== QUESTS (dal PDF Icebreaker) ===== */
+.say { font: italic 600 .85rem/1.5 "JetBrains Mono", monospace; color: var(--b); }
+.say::before { content: "🔊 "; font-style: normal; }
+li.say { list-style: none; }
+.lead .say { margin-top: .6rem; }
+.legend { margin-top: 1rem; max-width: 520px; font-size: .78rem; color: var(--mute); line-height: 1.5; }
+.legend b { color: var(--b); }
 .status { margin-top: 1.6rem; font: 400 .65rem "Press Start 2P", monospace; color: #3dff9a; display: flex; align-items: center; gap: .7rem; }
 .status i { width: 10px; height: 10px; border-radius: 50%; background: #3dff9a; box-shadow: 0 0 12px #3dff9a; animation: blink 1.2s infinite; }
 
