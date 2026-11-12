@@ -94,6 +94,20 @@
     sec.classList.remove('shake'); void sec.offsetWidth; sec.classList.add('shake');
   }
 
+  /* ---------- B7: run matteo.js in the fake console ---------- */
+  const runBtn = $('#runCode'), codeOut = $('#codeOut');
+  const OUT = ['$ node matteo.js', '✓ Loaded profile: Matteo Buccudu', '♥ Loves: Computing', '★ Skills: Coding · Photography',
+    '☺ Mindset: Curious, patient, creative', '» Two passions, one goal: create something great.'];
+  runBtn.addEventListener('click', () => {
+    runBtn.disabled = true; codeOut.textContent = '';
+    OUT.forEach((t, i) => setTimeout(() => {
+      const l = document.createElement('span');
+      l.textContent = t; if (!i) l.className = 'c';
+      codeOut.append(l);
+      if (i === OUT.length - 1) { runBtn.disabled = false; burst(runBtn); }
+    }, reduced ? 0 : i * 280));
+  });
+
   // XP bar = how far you scrolled
   const xp = $('#xpBar');
   const onScroll = () => { const max = document.documentElement.scrollHeight - innerHeight; xp.style.width = `${max > 0 ? scrollY / max * 100 : 0}%`; };

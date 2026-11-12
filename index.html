@@ -303,14 +303,29 @@ Type "help" to see the commands.
 
     <section id="code" class="win">
       <h2 class="px">B7 · My profile in code <code>matteo.js</code></h2>
-      <pre class="code"><span class="k">const</span> matteo = {
-  name:    <span class="s">"Matteo Buccudu"</span>,
-  loves:   <span class="s">"Computing"</span>,
-  skills:  [<span class="s">"Coding"</span>, <span class="s">"Photography"</span>],
-  mindset: <span class="s">"Curious, patient, creative"</span>
-};
-
-<span class="c">// Two passions, one goal: create something great.</span><span class="caret blink">█</span></pre>
+      <div class="editor">
+        <div class="ed-bar" aria-hidden="true">
+          <span class="ed-dots"><i></i><i></i><i></i></span>
+          <span class="ed-tab on">JS matteo.js</span>
+          <span class="ed-tab">MD README.md</span>
+        </div>
+        <div class="ed-body">
+          <pre class="code"><span class="ln" style="--i:0"><span class="k">const</span> matteo <span class="o">=</span> {</span>
+<span class="ln" style="--i:1">  <span class="p">name</span>:    <span class="s">"Matteo Buccudu"</span>,</span>
+<span class="ln" style="--i:2">  <span class="p">loves</span>:   <span class="s">"Computing"</span>,</span>
+<span class="ln" style="--i:3">  <span class="p">skills</span>:  [<span class="s">"Coding"</span>, <span class="s">"Photography"</span>],</span>
+<span class="ln" style="--i:4">  <span class="p">mindset</span>: <span class="s">"Curious, patient, creative"</span></span>
+<span class="ln" style="--i:5">};</span>
+<span class="ln" style="--i:6"> </span>
+<span class="ln" style="--i:7"><span class="c">// Two passions, one goal: create something great.</span><span class="caret blink">█</span></span></pre>
+          <div class="minimap" aria-hidden="true"><i style="--w:40%;--c:var(--pink)"></i><i style="--w:70%;--c:var(--green)"></i><i style="--w:50%;--c:var(--green)"></i><i style="--w:90%;--c:var(--green)"></i><i style="--w:85%;--c:var(--green)"></i><i style="--w:12%;--c:var(--gray)"></i><i style="--w:0"></i><i style="--w:95%;--c:var(--lav)"></i></div>
+        </div>
+        <div class="ed-console">
+          <div class="row"><span class="px ed-label">CONSOLE</span><button type="button" id="runCode" class="pbtn sm">▶ Run</button></div>
+          <pre id="codeOut" class="ed-out" aria-live="polite"><span class="c">// press Run to execute matteo.js</span></pre>
+        </div>
+        <p class="ed-status px" aria-hidden="true"><span>● JavaScript</span><span>Ln 8, Col 52</span><span>UTF-8</span><span>✓ 0 problems</span></p>
+      </div>
     </section>
     <section id="quiz" class="win">
       <h2 class="px">B8 · Final boss <code>quiz.exe</code></h2>
