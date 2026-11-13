@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matteo Buccudu — Code &amp; Photography</title>
-  <meta name="description" content="Matteo Buccudu: a curious person who loves coding and photography.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1c2c">
+  <title>Matteo Buccudu — Cybersecurity &amp; Photography</title>
+  <meta name="description" content="Matteo Buccudu: a curious person who loves cybersecurity and photography.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
+
 <body>
   <div id="start" class="start-screen" role="dialog" aria-modal="true" aria-label="Start screen">
     <p class="px s-small">MB GAMES PRESENTS</p>
@@ -22,8 +25,9 @@
   <div class="land" aria-hidden="true"></div>
   <nav class="nav px">
     <a class="logo" href="#top">MB<b>.</b></a>
-    <div class="links"><a href="#about">Me</a><a href="#coding">Passions</a><a href="#story">Story</a><a href="#goals">Future</a><a href="#bonus">Bonus</a></div>
-    <span class="trophies" title="Achievements unlocked">🏆 <b id="trophyCount">0</b>/8</span>
+    <div class="links"><a href="#about">Me</a><a href="#security">Passions</a><a href="#story">Story</a><a
+        href="#goals">Future</a><a href="#bonus">Bonus</a></div>
+    <span class="trophies" title="Achievements unlocked">🏆 <b id="trophyCount">0</b>/9</span>
     <div class="xp" aria-hidden="true"><i id="xpBar"></i></div>
   </nav>
   <div id="toasts" class="toasts" aria-live="polite"></div>
@@ -31,7 +35,7 @@
   <header id="top" class="title">
     <div class="title-text">
       <p class="px tag"><span class="dot"></span> hello.world() — online</p>
-      <h1 class="px">Code <i>&amp;</i><br><span>Light.</span></h1>
+      <h1 class="px">Cyber <i>&amp;</i><br><span>Light.</span></h1>
       <p class="lead">Good morning! I'm <strong>Matteo Buccudu</strong>.</p>
       <div class="ask">
         <p class="px q-title">What's your favourite game?</p>
@@ -40,26 +44,29 @@
           <button type="button" class="pbtn alt" data-fav="games">🎮 Video games</button>
           <button type="button" class="pbtn" data-fav="pc">💻 The computer</button>
         </div>
-        <p id="favOut" class="fav-out" aria-live="polite">My answer: the computer. That's why this website looks like a video game!</p>
+        <p id="favOut" class="fav-out" aria-live="polite">My answer: the computer. That's why this website looks like a
+          video game!</p>
       </div>
       <a class="pbtn go" href="#about">▶ Start</a>
       <p class="px status"><span class="blink">▶</span> STATUS: READY PLAYER ONE</p>
     </div>
     <div class="title-stage">
-      <div class="stage-sky" aria-hidden="true"><i class="stage-sun"></i><i class="cloud c1"></i><i class="cloud c2"></i></div>
-      <button type="button" id="heroBtn" class="hero-btn" aria-label="Click the pixel hero to say hi"><canvas class="sprite-view" width="12" height="17"></canvas></button>
+      <div class="stage-sky" aria-hidden="true"><i class="stage-sun"></i><i class="cloud c1"></i><i
+          class="cloud c2"></i></div>
+      <button type="button" id="heroBtn" class="hero-btn" aria-label="Click the pixel hero to say hi"><canvas
+          class="sprite-view" width="12" height="17"></canvas></button>
       <p id="bubble" class="bubble px" aria-live="polite">Click me!</p>
       <pre class="float-code" aria-hidden="true"><span class="k">while</span> (alive) {
-  <span class="f">code</span>();
-  <span class="f">shoot</span>();
+  <span class="f">scan</span>();
+  <span class="f">defend</span>();
 }</pre>
     </div>
   </header>
 
   <div class="marquee px" aria-hidden="true">
     <div class="track">
-      <span>CURIOSITY ✦ CODING ✦ PHOTOGRAPHY ✦ PATIENCE ✦ DETAILS ✦ CREATIVITY ✦ </span>
-      <span>CURIOSITY ✦ CODING ✦ PHOTOGRAPHY ✦ PATIENCE ✦ DETAILS ✦ CREATIVITY ✦ </span>
+      <span>CURIOSITY ✦ CYBERSECURITY ✦ PHOTOGRAPHY ✦ PATIENCE ✦ DETAILS ✦ CREATIVITY ✦ </span>
+      <span>CURIOSITY ✦ CYBERSECURITY ✦ PHOTOGRAPHY ✦ PATIENCE ✦ DETAILS ✦ CREATIVITY ✦ </span>
     </div>
   </div>
 
@@ -74,21 +81,27 @@
           <li>My best quality: <em>curiosity</em></li>
         </ul>
       </article>
-      <button type="button" class="win stat" data-alt="coding + photos"><b class="px">2</b><span>passions</span></button>
+      <button type="button" class="win stat" data-alt="security + photos"><b
+          class="px">2</b><span>passions</span></button>
       <button type="button" class="win stat" data-alt="never ends"><b class="px">∞</b><span>curiosity</span></button>
     </section>
 
     <section class="duo">
-      <article id="coding" class="win skill">
+      <article id="security" class="win skill">
         <h2 class="px">02 · Passion #1</h2>
-        <div class="icon px" aria-hidden="true">&lt;/&gt;</div>
-        <h3 class="px">Coding</h3>
+        <div class="icon px" aria-hidden="true">🔐</div>
+        <h3 class="px">Cybersecurity</h3>
         <ul class="keys">
-          <li>Instructions for a computer</li>
-          <li>Like a puzzle 🧩</li>
+          <li>Protecting computers and people</li>
+          <li>Like a detective game 🕵️</li>
         </ul>
-        <ol class="flow px"><li>Try</li><li>Fail</li><li>Try again</li><li>It works!</li></ol>
-        <p>It works = <em>level won</em> 🏆</p>
+        <ol class="flow px">
+          <li>Find</li>
+          <li>Test</li>
+          <li>Fix</li>
+          <li>Safe!</li>
+        </ol>
+        <p>Safe = <em>level won</em> 🏆</p>
         <p class="lesson px">Teaches me: patience</p>
       </article>
       <article id="photography" class="win skill">
@@ -96,69 +109,145 @@
         <div class="icon px" aria-hidden="true">📷</div>
         <h3 class="px">Photography</h3>
         <ul class="keys">
-          <li>I love light ☀️</li>
-          <li>Best moment: just before the sunset</li>
+          <li>Photos of many different genres 🌍</li>
+          <li>Sport ⚽ cars 🚗 cities 🏙️</li>
         </ul>
-        <ol class="flow px"><li>Look</li><li>Wait</li><li>Click</li></ol>
-        <p>Soft light, warm colours 🌅</p>
+        <ol class="flow px">
+          <li>Look</li>
+          <li>Wait</li>
+          <li>Click</li>
+        </ol>
+        <p>Every genre has new details ✨</p>
         <p class="lesson px">Teaches me: small details</p>
       </article>
     </section>
 
+    <section id="cyber" class="win">
+      <h2 class="px">04 · Cyber lab <code>lab.sh</code></h2>
+      <p class="intro">Three tools to play with. Defence only: we protect, we never attack. Try them all!</p>
+      <div class="lab">
+        <article class="quest">
+          <h3 class="px">🔑 Password lab</h3>
+          <p>Type a test password. Never type your real one!</p>
+          <input id="pw" type="text" autocomplete="off" spellcheck="false" maxlength="40" placeholder="try: 1234" aria-label="Test password">
+          <div class="meter" aria-hidden="true"><i id="pwBar"></i></div>
+          <p id="pwOut" class="pw-out" aria-live="polite">Waiting for a password...</p>
+          <ul id="pwChecks" class="checks">
+            <li data-c="len">12+ characters</li>
+            <li data-c="low">small letters</li>
+            <li data-c="up">BIG LETTERS</li>
+            <li data-c="num">numb3rs</li>
+            <li data-c="sym">symbols !#$</li>
+          </ul>
+        </article>
+        <article class="quest">
+          <h3 class="px">🎲 Password generator</h3>
+          <p>Random and made in your browser. Nothing is sent or saved.</p>
+          <output id="gOut" class="gen-out" aria-live="polite">Press Generate</output>
+          <label class="shift"><span class="px">Length <b id="gLenN">16</b></span><input id="gLen" type="range" min="12" max="32" value="16"></label>
+          <label class="opt-row"><input id="gSym" type="checkbox" checked> Symbols !#$%</label>
+          <label class="opt-row"><input id="gAmb" type="checkbox"> No look-alikes (0 O l 1)</label>
+          <p id="gInfo" class="pw-out"></p>
+          <div class="row">
+            <button type="button" id="gGo" class="pbtn sm">🎲 Generate</button>
+            <button type="button" id="gCopy" class="pbtn sm alt">Copy</button>
+            <button type="button" id="gTest" class="pbtn sm alt">Test it ↑</button>
+          </div>
+        </article>
+        <article class="quest wide-q">
+          <h3 class="px">🎣 Phishing detector</h3>
+          <div id="phBox" class="quiz" aria-live="polite"></div>
+        </article>
+      </div>
+    </section>
+
     <section id="story" class="win">
-      <h2 class="px">04 · My story <code>history.log</code></h2>
+      <h2 class="px">05 · My story <code>history.log</code></h2>
       <p class="intro">Four levels. Click to open.</p>
       <div class="timeline">
-        <details><summary class="px">Level 1 · First computer</summary><p>I was a child → I pressed every key → <em>"What's inside?"</em></p></details>
-        <details><summary class="px">Level 2 · First program</summary><p>It only said <em>"Hello, World!"</em> → for me: magic ✨</p></details>
-        <details><summary class="px">Level 3 · First camera</summary><p>Photos of everything: sky, street, friends 📸<br>Many bad photos → I learned a lot</p></details>
-        <details><summary class="px">Level 4 · Today</summary><p>I mix my two passions → <em>this website</em>: my code, my colours, my pictures</p></details>
+        <details>
+          <summary class="px">Level 1 · First computer</summary>
+          <p>I was a child → I pressed every key → <em>"What's inside?"</em></p>
+        </details>
+        <details>
+          <summary class="px">Level 2 · First program</summary>
+          <p>It only said <em>"Hello, World!"</em> → for me: magic ✨<br>Then I learned cybersecurity: how to protect computers 🔐</p>
+        </details>
+        <details>
+          <summary class="px">Level 3 · First camera</summary>
+          <p>Photos of everything: sky, street, friends 📸<br>Many bad photos → I learned a lot<br>Today: many genres: sport, cars, cities</p>
+        </details>
+        <details>
+          <summary class="px">Level 4 · Today</summary>
+          <p>I mix my two passions → <em>this website</em>: my security ideas, my colours, my pictures</p>
+        </details>
       </div>
     </section>
 
     <section id="bugs" class="win">
-      <h2 class="px">05 · Not perfect <code>bugs.json</code></h2>
+      <h2 class="px">06 · Not perfect <code>bugs.json</code></h2>
       <p class="intro">Nobody is perfect. These are my bugs. Click to squash!</p>
       <div class="bugs main-bugs">
-        <button type="button" class="bug"><b class="px">#01 Sleep.exe not found</b><span>😴 Bed too late: "I just want to finish my code!"</span><small class="px">Patch: won't fix.</small></button>
-        <button type="button" class="bug"><b class="px">#02 Camera always on</b><span>📷 I never leave home without my camera.</span><small class="px">Patch: it's a feature!</small></button>
+        <button type="button" class="bug"><b class="px">#01 Sleep.exe not found</b><span>😴 Bed too late: "I just want
+            to finish my project!"</span><small class="px">Patch: won't fix.</small></button>
+        <button type="button" class="bug"><b class="px">#02 Camera always on</b><span>📷 I never leave home without my
+            camera.</span><small class="px">Patch: it's a feature!</small></button>
       </div>
       <details class="more">
         <summary class="px">+ More funny bugs</summary>
         <div class="bugs">
-          <button type="button" class="bug"><b class="px">#03 It works on my machine</b><span>My code works on my computer. On your computer? Nobody knows.</span><small class="px">Patch: give everyone my computer.</small></button>
-          <button type="button" class="bug"><b class="px">#04 Just one more photo</b><span>I say: "just one more photo". Then I take two hundred.</span><small class="px">Patch: buy a bigger memory card.</small></button>
-          <button type="button" class="bug"><b class="px">#05 Storage full</b><span>My phone is full: three thousand photos of the same sunset.</span><small class="px">Patch: delete one, take ten more.</small></button>
-          <button type="button" class="bug"><b class="px">#06 Missing semicolon</b><span>I look for a bug for one hour. The problem is one small ;</span><small class="px">Patch: glasses.exe installed.</small></button>
-          <button type="button" class="bug"><b class="px">#07 Golden hour alert</b><span>When the sun goes down, I stop talking and run outside with my camera.</span><small class="px">Patch: my friends now come with me.</small></button>
-          <button type="button" class="bug"><b class="px">#08 Ctrl+Z in real life</b><span>When I drop my ice cream, my fingers look for Ctrl+Z.</span><small class="px">Patch: not available in real life.</small></button>
-          <button type="button" class="bug"><b class="px">#09 Too many tabs</b><span>I have 47 tabs open. They are all very important.</span><small class="px">Patch: open a new window.</small></button>
+          <button type="button" class="bug"><b class="px">#03 It works on my machine</b><span>My code works on my
+              computer. On your computer? Nobody knows.</span><small class="px">Patch: give everyone my
+              computer.</small></button>
+          <button type="button" class="bug"><b class="px">#04 Just one more photo</b><span>I say: "just one more photo".
+              Then I take two hundred.</span><small class="px">Patch: buy a bigger memory card.</small></button>
+          <button type="button" class="bug"><b class="px">#05 Storage full</b><span>My phone is full: three thousand
+              photos of the same street.</span><small class="px">Patch: delete one, take ten more.</small></button>
+          <button type="button" class="bug"><b class="px">#06 Password: 1234</b><span>I said: "nobody can guess my
+              password". It was 1234.</span><small class="px">Patch: password manager installed.</small></button>
+          <button type="button" class="bug"><b class="px">#07 Photo alert</b><span>When I see a good scene, I stop
+              talking and take my camera.</span><small class="px">Patch: my friends now wait
+              for me.</small></button>
+          <button type="button" class="bug"><b class="px">#08 Ctrl+Z in real life</b><span>When I drop my ice cream, my
+              fingers look for Ctrl+Z.</span><small class="px">Patch: not available in real life.</small></button>
+          <button type="button" class="bug"><b class="px">#09 Too many tabs</b><span>I have 47 tabs open. They are all
+              very important.</span><small class="px">Patch: open a new window.</small></button>
         </div>
       </details>
       <p class="px counter">Bugs squashed: <b id="squashed">0</b>/<span id="bugTotal">9</span></p>
     </section>
 
     <section id="goals" class="win">
-      <h2 class="px">06 · The future <code>roadmap.md</code></h2>
+      <h2 class="px">07 · The future <code>roadmap.md</code></h2>
       <p class="intro">My next quests. Tick a quest when you think I can do it!</p>
       <ul class="roadmap">
-        <li><label><input type="checkbox"> 💻 Learn a new programming language</label></li>
+        <li><label><input type="checkbox"> 🛡️ Learn ethical hacking and a new programming language</label></li>
         <li><label><input type="checkbox"> 🎮 Make a real video game</label></li>
         <li><label><input type="checkbox"> 🖼️ Show my best photos in an exhibition</label></li>
-        <li class="main-goal"><label><input type="checkbox"> ⭐ Stay curious, always <small class="px">most important</small></label></li>
+        <li class="main-goal"><label><input type="checkbox"> ⭐ Stay curious, always <small class="px">most
+              important</small></label></li>
       </ul>
-      <div class="bar road"><span class="px">Progress</span><i id="roadBar" style="--v:0%"></i><b id="roadNum">0/4</b></div>
+      <div class="bar road"><span class="px">Progress</span><i id="roadBar" style="--v:0%"></i><b id="roadNum">0/4</b>
+      </div>
     </section>
 
     <section id="sum" class="win">
-      <h2 class="px">07 · To sum up</h2>
+      <h2 class="px">08 · To sum up</h2>
       <p class="big">I'm <em>Matteo</em>.</p>
-      <ul class="pills big-pills"><li>Curious</li><li>Coding</li><li>Photography</li></ul>
-      <ol class="flow px"><li>Be patient</li><li>Look carefully</li><li>Create something great</li></ol>
+      <ul class="pills big-pills">
+        <li>Curious</li>
+        <li>Cybersecurity</li>
+        <li>Photography</li>
+      </ul>
+      <ol class="flow px">
+        <li>Be patient</li>
+        <li>Look carefully</li>
+        <li>Create something great</li>
+      </ol>
     </section>
 
     <section class="win credits" data-ach="end">
-      <h2 class="px">08 · Thank you</h2>
+      <h2 class="px">09 · Thank you</h2>
       <p class="big">Every big idea starts with <em>curiosity</em>.</p>
       <p>Thank you for listening! Questions? 🙋</p>
     </section>
@@ -174,7 +263,11 @@
         <article class="quest">
           <h3 class="px">&lt;/&gt; Identity</h3>
           <p>My name is Matteo Buccudu.</p>
-          <ul class="pills"><li>Coding</li><li>Photography</li><li>Computers</li></ul>
+          <ul class="pills">
+            <li>Cybersecurity</li>
+            <li>Photography</li>
+            <li>Computers</li>
+          </ul>
         </article>
         <article class="quest">
           <h3 class="px">🐛 Personal bug</h3>
@@ -196,7 +289,7 @@ without my camera</pre>
       <div class="sheet">
         <div class="stats">
           <h3 class="px h">Stats bar</h3>
-          <div class="bar" style="--v:75%"><span>Coding</span><i></i><b>75%</b></div>
+          <div class="bar" style="--v:75%"><span>Cybersecurity</span><i></i><b>75%</b></div>
           <div class="bar" style="--v:80%"><span>Photography</span><i></i><b>80%</b></div>
           <div class="bar" style="--v:85%"><span>Problem solving</span><i></i><b>85%</b></div>
           <div class="bar" style="--v:95%"><span>Curiosity</span><i></i><b>95%</b></div>
@@ -205,42 +298,79 @@ without my camera</pre>
         <div>
           <h3 class="px h">Perks &amp; badges</h3>
           <ul class="inv">
-            <li><span>📷</span>Light Chaser</li>
-            <li><span>⌨️</span>Keyboard Warrior</li>
+            <li><span>📷</span>Scene Catcher</li>
+            <li><span>🛡️</span>Shield Master</li>
             <li><span>🐛</span>Bug Hunter</li>
             <li><span>🎯</span>Detail Lover</li>
           </ul>
           <h3 class="px h">Interests</h3>
-          <ul class="pills"><li>Computing</li><li>Coding</li><li>Photography</li></ul>
+          <ul class="pills">
+            <li>Computing</li>
+            <li>Cybersecurity</li>
+            <li>Photography</li>
+          </ul>
         </div>
       </div>
     </section>
     <section id="photo" class="win">
-      <h2 class="px">B3 · Photo mode <code>camera.app</code></h2>
-      <p class="intro">A good photo needs three things: light, a frame and patience. Take a photo: every photo gives you a tip.</p>
-      <div class="photo-mode">
-        <div id="vf" class="viewfinder t0" aria-hidden="true">
-          <div class="scene"><i class="sun"></i><i class="mtn"></i></div>
-          <span class="hud top px"><span><i class="rec"></i> REC</span><span>RAW · 4K</span></span>
-          <span class="hud bot px"><span>ISO 100</span><span>f/1.8</span><span>1/250</span></span>
-          <span class="focus"></span>
-        </div>
-        <div class="shots">
-          <button type="button" id="shutter" class="pbtn">📷 Take a photo</button>
-          <p id="tip" class="tip" aria-live="polite">Tip: look at the light first, then at the subject.</p>
-          <div id="roll" class="roll" aria-label="Your photos"></div>
-        </div>
+      <h2 class="px">B3 · Photo roll <code>roll.jpg</code></h2>
+      <p class="intro">I take photos of many different genres. Click a photo to open it. Use ◀ ▶, the arrow keys or swipe.</p>
+      <div class="tabs" role="group" aria-label="Filter photos">
+        <button type="button" class="pbtn sm on" data-f="all" aria-pressed="true">All</button>
+        <button type="button" class="pbtn sm alt" data-f="sport" aria-pressed="false">⚽ Sport</button>
+        <button type="button" class="pbtn sm alt" data-f="car" aria-pressed="false">🚗 Cars</button>
+        <button type="button" class="pbtn sm alt" data-f="city" aria-pressed="false">🏙️ City</button>
       </div>
+      <div id="gallery" class="gallery"></div>
     </section>
 
-    <section id="terminal" class="win" >
-      <h2 class="px">B4 · Terminal <code>matteo.sh</code></h2>
-      <p class="intro">This part is for coders. Type a command and press Enter, or click a button. Try <kbd>help</kbd>.</p>
+    <section id="expo-lab" class="win">
+      <h2 class="px">B4 · Exposure lab <code>manual.mode</code></h2>
+      <p class="intro">Sport is fast, cars are shiny. Change ISO, aperture and shutter speed, then pick a filter.</p>
+      <div class="photo-lab">
+        <div>
+          <div id="expo" class="expo s-futsal" role="img" aria-label="Preview that changes with the camera settings">
+            <div class="expo-bg"></div>
+            <div id="expoSub" class="expo-sub">⚽</div>
+            <i class="grain"></i>
+          </div>
+          <div class="tabs">
+            <button type="button" class="pbtn sm on" data-scene="futsal" aria-pressed="true">⚽ Futsal</button>
+            <button type="button" class="pbtn sm alt" data-scene="car" aria-pressed="false">🚗 Car</button>
+          </div>
+        </div>
+        <div class="controls">
+          <label><span class="px">ISO <b id="isoV"></b></span><input id="iso" type="range" min="0" max="5" value="1"></label>
+          <label><span class="px">Aperture <b id="apV"></b></span><input id="ap" type="range" min="0" max="6" value="2"></label>
+          <label><span class="px">Shutter <b id="shV"></b></span><input id="sh" type="range" min="0" max="6" value="2"></label>
+          <p id="expoMsg" class="px expo-msg" aria-live="polite"></p>
+          <ul id="expoInfo" class="specs"></ul>
+          <div class="px h">Filters</div>
+          <div class="tabs filters" role="group" aria-label="Photo filters">
+            <button type="button" class="pbtn sm on" data-flt="none" aria-pressed="true">Normal</button>
+            <button type="button" class="pbtn sm alt" data-flt="golden" aria-pressed="false">Golden hour</button>
+            <button type="button" class="pbtn sm alt" data-flt="bw" aria-pressed="false">B&amp;W</button>
+            <button type="button" class="pbtn sm alt" data-flt="night" aria-pressed="false">Night</button>
+            <button type="button" class="pbtn sm alt" data-flt="vintage" aria-pressed="false">Vintage</button>
+            <button type="button" class="pbtn sm alt" data-flt="vivid" aria-pressed="false">Vivid</button>
+          </div>
+        </div>
+      </div>
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <filter id="mb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur id="mbBlur" stdDeviation="0 0" /></filter>
+      </svg>
+    </section>
+
+    <section id="terminal" class="win">
+      <h2 class="px">B5 · Terminal <code>matteo.sh</code></h2>
+      <p class="intro">This part is for hackers (the good ones). Type a command and press Enter, or click a button. Try <kbd>help</kbd>.
+      </p>
       <div class="console">
         <pre id="out" aria-live="polite">Welcome to matteo.sh v1.0
 Type "help" to see the commands.
 </pre>
-        <form id="cmd" class="prompt"><label for="cmdIn">$</label><input id="cmdIn" autocomplete="off" spellcheck="false" autocapitalize="off" aria-label="Command"></form>
+        <form id="cmd" class="prompt"><label for="cmdIn">$</label><input id="cmdIn" autocomplete="off"
+            spellcheck="false" autocapitalize="off" aria-label="Command"></form>
       </div>
       <div class="quick">
         <button type="button" class="pbtn sm" data-cmd="help">help</button>
@@ -252,52 +382,24 @@ Type "help" to see the commands.
       </div>
     </section>
 
-    <section id="create" class="win">
-      <h2 class="px">B5 · Pixel avatar <code>12×17</code></h2>
-      <div class="creator">
-        <div class="stage">
-          <canvas class="sprite-view big" width="12" height="17" role="img" aria-label="Preview of your pixel avatar"></canvas>
-          <span class="px nameplate hero-name">PLAYER 1</span>
-        </div>
-        <div class="opts">
-          <ul class="specs">
-            <li><b>Tool:</b> HTML canvas</li>
-            <li><b>Design:</b> a retro game picture, 12×17 pixels</li>
-            <li><b>Detail:</b> pick a camera: one of my two passions. Make your own avatar!</li>
-          </ul>
-          <label class="opt"><span class="px">Name</span><input id="name" class="px" maxlength="10" autocomplete="off" spellcheck="false"></label>
-          <div class="opt"><span class="px">Skin</span><div class="swatches" data-opt="skin"></div></div>
-          <div class="opt"><span class="px">Hair</span>
-            <div class="stepper" data-step="hair"><button type="button" class="pbtn sm" aria-label="Previous hair style">◀</button><output class="px"></output><button type="button" class="pbtn sm" aria-label="Next hair style">▶</button></div>
-          </div>
-          <div class="opt"><span class="px">Colour</span><div class="swatches" data-opt="hairC"></div></div>
-          <div class="opt"><span class="px">Shirt</span><div class="swatches" data-opt="shirt"></div></div>
-          <div class="opt"><span class="px">Pants</span><div class="swatches" data-opt="pants"></div></div>
-          <div class="opt"><span class="px">Item</span>
-            <div class="stepper" data-step="acc"><button type="button" class="pbtn sm" aria-label="Previous item">◀</button><output class="px"></output><button type="button" class="pbtn sm" aria-label="Next item">▶</button></div>
-          </div>
-          <div class="row">
-            <button type="button" id="random" class="pbtn alt">? Random</button>
-            <a href="#play" class="pbtn">▶ Play</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="play" class="win">
-      <h2 class="px">B6 · Bonus level <code>1-1</code></h2>
-      <div class="game">
-        <canvas id="game" width="320" height="180" tabindex="0" aria-label="Optional playable level. Use the arrow keys or A and D to walk and space to jump."></canvas>
-        <div id="dlg" class="dlg" aria-live="polite" hidden><h3 class="px"></h3><p></p></div>
-      </div>
-      <div class="pad" aria-label="Touch controls">
-        <button type="button" class="pbtn" data-key="left" aria-label="Left">◀</button>
-        <button type="button" class="pbtn" data-key="right" aria-label="Right">▶</button>
-        <button type="button" class="pbtn alt jump" data-key="jump" aria-label="Jump">A</button>
-      </div>
-      <div class="row hint">
-        <p><kbd>←</kbd> <kbd>→</kbd> walk · <kbd>SPACE</kbd> jump · read the signs · collect the bits</p>
-        <button type="button" id="restart" class="pbtn sm alt">↺ Restart</button>
+    <section id="mix" class="win">
+      <h2 class="px">B6 · Two passions, one mix <code>mix.run()</code></h2>
+      <div class="trio">
+        <article class="quest">
+          <h3 class="px">🔐 Cybersecurity</h3>
+          <p>Like a detective game. I try again and again, and I win the level.</p>
+          <ul class="pills"><li>Patience</li></ul>
+        </article>
+        <article class="quest">
+          <h3 class="px">📷 Photography</h3>
+          <p>First I look, then I wait, then I click.</p>
+          <ul class="pills"><li>Small details</li></ul>
+        </article>
+        <article class="quest">
+          <h3 class="px">⚡ Mix</h3>
+          <p>This website: I built it with security in mind, and I chose all the colours and pictures.</p>
+          <ul class="pills"><li>Create something great</li></ul>
+        </article>
       </div>
     </section>
 
@@ -310,21 +412,28 @@ Type "help" to see the commands.
           <span class="ed-tab">MD README.md</span>
         </div>
         <div class="ed-body">
-          <pre class="code"><span class="ln" style="--i:0"><span class="k">const</span> matteo <span class="o">=</span> {</span>
+          <pre
+            class="code"><span class="ln" style="--i:0"><span class="k">const</span> matteo <span class="o">=</span> {</span>
 <span class="ln" style="--i:1">  <span class="p">name</span>:    <span class="s">"Matteo Buccudu"</span>,</span>
 <span class="ln" style="--i:2">  <span class="p">loves</span>:   <span class="s">"Computing"</span>,</span>
-<span class="ln" style="--i:3">  <span class="p">skills</span>:  [<span class="s">"Coding"</span>, <span class="s">"Photography"</span>],</span>
+<span class="ln" style="--i:3">  <span class="p">skills</span>:  [<span class="s">"Cybersecurity"</span>, <span class="s">"Photography"</span>],</span>
 <span class="ln" style="--i:4">  <span class="p">mindset</span>: <span class="s">"Curious, patient, creative"</span></span>
 <span class="ln" style="--i:5">};</span>
 <span class="ln" style="--i:6"> </span>
 <span class="ln" style="--i:7"><span class="c">// Two passions, one goal: create something great.</span><span class="caret blink">█</span></span></pre>
-          <div class="minimap" aria-hidden="true"><i style="--w:40%;--c:var(--pink)"></i><i style="--w:70%;--c:var(--green)"></i><i style="--w:50%;--c:var(--green)"></i><i style="--w:90%;--c:var(--green)"></i><i style="--w:85%;--c:var(--green)"></i><i style="--w:12%;--c:var(--gray)"></i><i style="--w:0"></i><i style="--w:95%;--c:var(--lav)"></i></div>
+          <div class="minimap" aria-hidden="true"><i style="--w:40%;--c:var(--pink)"></i><i
+              style="--w:70%;--c:var(--green)"></i><i style="--w:50%;--c:var(--green)"></i><i
+              style="--w:90%;--c:var(--green)"></i><i style="--w:85%;--c:var(--green)"></i><i
+              style="--w:12%;--c:var(--gray)"></i><i style="--w:0"></i><i style="--w:95%;--c:var(--lav)"></i></div>
         </div>
         <div class="ed-console">
-          <div class="row"><span class="px ed-label">CONSOLE</span><button type="button" id="runCode" class="pbtn sm">▶ Run</button></div>
-          <pre id="codeOut" class="ed-out" aria-live="polite"><span class="c">// press Run to execute matteo.js</span></pre>
+          <div class="row"><span class="px ed-label">CONSOLE</span><button type="button" id="runCode" class="pbtn sm">▶
+              Run</button></div>
+          <pre id="codeOut" class="ed-out"
+            aria-live="polite"><span class="c">// press Run to execute matteo.js</span></pre>
         </div>
-        <p class="ed-status px" aria-hidden="true"><span>● JavaScript</span><span>Ln 8, Col 52</span><span>UTF-8</span><span>✓ 0 problems</span></p>
+        <p class="ed-status px" aria-hidden="true"><span>● JavaScript</span><span>Ln 8, Col
+            52</span><span>UTF-8</span><span>✓ 0 problems</span></p>
       </div>
     </section>
     <section id="quiz" class="win">
@@ -335,7 +444,18 @@ Type "help" to see the commands.
   </main>
 
   <footer class="foot px">© Matteo Buccudu · Built with HTML, CSS &amp; JS</footer>
+  <dialog id="lb" class="lb" aria-label="Photo viewer">
+    <div id="lbPic" class="lb-pic"></div>
+    <p id="lbCap" class="px lb-cap" aria-live="polite"></p>
+    <div class="lb-nav">
+      <button type="button" id="lbPrev" class="pbtn sm" aria-label="Previous photo">◀</button>
+      <span id="lbN" class="px"></span>
+      <button type="button" id="lbNext" class="pbtn sm" aria-label="Next photo">▶</button>
+      <button type="button" id="lbClose" class="pbtn sm alt" aria-label="Close">✕</button>
+    </div>
+  </dialog>
   <script src="game.js"></script>
   <script src="site.js"></script>
 </body>
+
 </html>

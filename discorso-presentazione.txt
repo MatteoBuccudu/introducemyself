@@ -6,18 +6,18 @@ Let me start with a question: what is your favourite game? For some people it is
 
 First, I want to talk about my personality. I am a very curious person. When I see something new, I always ask: how does it work? I want to understand it. Then I like to make my own things. Curiosity is my best quality.
 
-I have two big passions: coding and photography.
+I have two big passions: cybersecurity and photography.
 
-My first passion is coding. Coding means writing instructions for a computer. For me, it is like a puzzle. Very often my program doesn't work the first time. So I try again, and again. When it finally works, I am very happy. It is like winning a level in a game. Coding teaches me to be patient.
+My first passion is cybersecurity. Cybersecurity means protecting computers and people from attacks. For me, it is like a detective game. Very often I don't find the weak point the first time. So I try again, and again. When everything is finally safe, I am very happy. It is like winning a level in a game. Cybersecurity teaches me to be patient.
 
-My second passion is photography. I love light. My favourite moment of the day is just before the sunset. The light is soft and warm. When I take a photo, I don't click fast. First I look, then I wait, and then I click. Photography teaches me to see small details.
+My second passion is photography. I take photos of many different genres: sport, cars and cities. Every subject is different, so I don't click fast. First I look, then I wait for the right moment, and then I click. Photography teaches me to see small details.
 
-Now, a little story. When I was a child, I saw a computer for the first time. I pressed every key, because I wanted to know what was inside. Some years later, I wrote my first program. It only said "Hello, World!". But for me, it was magic. Later, I got my first camera. I took photos of everything: the sky, my street, my friends. Many photos were bad, but I learned a lot.
+Now, a little story. When I was a child, I saw a computer for the first time. I pressed every key, because I wanted to know what was inside. Some years later, I wrote my first program. It only said "Hello, World!". But for me, it was magic. Then I discovered cybersecurity, and I learned how to protect computers. Later, I got my first camera. I took photos of everything: the sky, my street, my friends. Many photos were bad, but I learned a lot. Today I take photos of many different genres.
 
-Today I mix my two passions. For example, I made this website with code, and I chose all the colours and pictures.
+Today I mix my two passions. For example, I made this website with my security ideas, and I chose all the colours and pictures.
 
-I am not perfect. Sometimes I go to bed too late, because I want to finish my code. And I never leave home without my camera.
+I am not perfect. Sometimes I go to bed too late, because I want to finish my project. And I never leave home without my camera.
 
-What about the future? I want to learn a new programming language. I would like to make a real video game. One day, I want to show my best photos in a small exhibition. But my most important goal is simple: I want to stay curious.
+What about the future? I want to learn ethical hacking and a new programming language. I would like to make a real video game. One day, I want to show my best photos in a small exhibition. But my most important goal is simple: I want to stay curious.
 
-To sum up, I am Matteo. I am curious, and I love coding and photography. Both passions teach me the same thing: be patient, look carefully, and you can create something great.
+To sum up, I am Matteo. I am curious, and I love cybersecurity and photography. Both passions teach me the same thing: be patient, look carefully, and you can create something great.
