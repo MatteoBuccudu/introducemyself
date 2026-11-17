@@ -2618,3 +2618,17 @@ pre { max-width: 100%; overflow-x: auto; }
 .gen-out { display: block; font: 26px "VT323", monospace; color: var(--green); background: var(--ink); padding: 10px 12px; box-shadow: var(--edge), inset 0 4px 0 rgba(0,0,0,.4); word-break: break-all; min-height: 2.6em; user-select: all; }
 .opt-row { display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .opt-row input { width: 20px; height: 20px; accent-color: var(--red); }
+
+/* ---------- 3D studio + music toggle ---------- */
+.music { background: var(--ink); color: var(--cream); border: 3px solid var(--cream); padding: 6px 10px; font: inherit; font-size: 10px; cursor: pointer; }
+.music[aria-pressed="true"] { color: var(--green); border-color: var(--green); }
+.music:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.studio { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.vp { position: relative; margin: 0; aspect-ratio: 4 / 3; background: #07080f; border: 4px solid var(--cream); box-shadow: var(--edge); overflow: hidden; }
+.vp canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.vp figcaption { position: absolute; left: 10px; bottom: 10px; padding: 8px 10px; font-size: 10px; background: rgba(26, 28, 44, .85); border: 2px solid var(--cream); }
+.vp figcaption b { color: var(--yellow); }
+.flashfx { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+.flashfx.on { animation: shutter .35s ease-out; }
+@keyframes shutter { 0% { opacity: .55 } 100% { opacity: 0 } }
+@media (max-width: 760px) { .studio { grid-template-columns: 1fr; } }

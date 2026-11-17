@@ -27,6 +27,7 @@
     <a class="logo" href="#top">MB<b>.</b></a>
     <div class="links"><a href="#about">Me</a><a href="#security">Passions</a><a href="#story">Story</a><a
         href="#goals">Future</a><a href="#bonus">Bonus</a></div>
+    <button type="button" id="musicBtn" class="music px" aria-pressed="false" aria-label="Toggle music">🔇 <span>MUSIC OFF</span></button>
     <span class="trophies" title="Achievements unlocked">🏆 <b id="trophyCount">0</b>/9</span>
     <div class="xp" aria-hidden="true"><i id="xpBar"></i></div>
   </nav>
@@ -158,6 +159,22 @@
           <h3 class="px">🎣 Phishing detector</h3>
           <div id="phBox" class="quiz" aria-live="polite"></div>
         </article>
+      </div>
+    </section>
+
+    <section id="studio" class="win">
+      <h2 class="px">04b · 3D studio <code>studio.render()</code></h2>
+      <p class="intro">My two passions, live in 3D. Move the mouse over a scene to look around.</p>
+      <div class="studio">
+        <figure class="vp">
+          <canvas id="cvFoot" aria-label="3D scene: a photographer shooting football players on a pitch"></canvas>
+          <i id="flashFx" class="flashfx" aria-hidden="true"></i>
+          <figcaption class="px">📷 Sport shoot · shots <b id="shots">0</b></figcaption>
+        </figure>
+        <figure class="vp">
+          <canvas id="cvHack" aria-label="3D scene: an ethical hacker building a file encryption system"></canvas>
+          <figcaption class="px">🔐 Encryption lab · files sealed <b id="locked">0</b></figcaption>
+        </figure>
       </div>
     </section>
 
@@ -454,8 +471,11 @@ Type "help" to see the commands.
       <button type="button" id="lbClose" class="pbtn sm alt" aria-label="Close">✕</button>
     </div>
   </dialog>
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+  <script src="music.js"></script>
   <script src="game.js"></script>
   <script src="site.js"></script>
+  <script type="module" src="scene3d.js"></script>
 </body>
 
 </html>
