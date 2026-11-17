@@ -2618,3 +2618,6 @@ pre { max-width: 100%; overflow-x: auto; }
 .gen-out { display: block; font: 26px "VT323", monospace; color: var(--green); background: var(--ink); padding: 10px 12px; box-shadow: var(--edge), inset 0 4px 0 rgba(0,0,0,.4); word-break: break-all; min-height: 2.6em; user-select: all; }
 .opt-row { display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .opt-row input { width: 20px; height: 20px; accent-color: var(--red); }
+
+.music-btn { font: inherit; font-size: 11px; color: var(--cream); background: none; border: 2px solid var(--cream); padding: 4px 8px; cursor: pointer; }
+.music-btn[aria-pressed="true"] { color: var(--ink); background: var(--yellow); border-color: var(--yellow); }
