@@ -45,15 +45,13 @@ body {
   overflow-x: hidden;
 }
 
-.sky {
+#fx {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -3;
   pointer-events: none;
-  background:
-    radial-gradient(var(--cream) 1px, transparent 1.5px) 0 0 / 56px 56px,
-    radial-gradient(var(--lav) 1px, transparent 1.5px) 28px 20px / 92px 92px,
-    linear-gradient(var(--ink), var(--night) 70%, var(--plum));
 }
 
 /* CRT scanlines */

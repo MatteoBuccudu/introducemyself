@@ -14,8 +14,7 @@
 </head>
 
 <body>
-  <div class="sky" aria-hidden="true"></div>
-  <div class="cloud-bank" aria-hidden="true"><i></i><i></i><i></i></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
   <div id="start" class="start-screen" role="dialog" aria-modal="true" aria-label="Start screen">
     <p class="px s-small">MB GAMES PRESENTS</p>
     <p class="px s-title">MATTEO<br><span>BUCCUDU</span></p>
@@ -474,6 +473,7 @@ Type "help" to see the commands.
   <script src="music.js"></script>
   <script src="game.js"></script>
   <script src="site.js"></script>
+  <script src="bg.js"></script>
   <script type="module" src="scene3d.js" onerror="document.querySelectorAll('.vp canvas').forEach(c=>c.outerHTML='&lt;p style=&quot;padding:20px;margin:0&quot;&gt;3D not loaded: open the site through a web server (not file://) and check your connection.&lt;/p&gt;')"></script>
 </body>
 
