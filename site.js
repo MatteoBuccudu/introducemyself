@@ -449,40 +449,31 @@
   fTabs.forEach((b) => b.onclick = () => { pressed(fTabs, b); drawGallery(b.dataset.f); });
   drawGallery("all");
 
-  /* ---------- EXPOSURE LAB + FILTERS ---------- */
-  const ISO = [100, 200, 400, 800, 1600, 3200], AP = [1.8, 2.8, 4, 5.6, 8, 11, 16], SH = [1000, 500, 250, 125, 60, 30, 15];
-  const BLUR = [0, 0, 0, 1, 4, 10, 20], GRAIN = [0, 0, .05, .15, .3, .5];
-  const FLT = {
-    none: "grayscale(0)", golden: "sepia(.55) saturate(1.5) hue-rotate(-12deg)", bw: "grayscale(1) contrast(1.25)",
-    night: "saturate(.7) hue-rotate(200deg) brightness(.85)", vintage: "sepia(.8) contrast(.9) saturate(.9)", vivid: "saturate(1.8) contrast(1.15)",
-  };
-  const expo = $("#expo"), iso = $("#iso"), ap = $("#ap"), sh = $("#sh");
-  function expoUpdate() {
-    const i = ISO[iso.value], n = AP[ap.value], s = SH[sh.value];
-    $("#isoV").textContent = i; $("#apV").textContent = `f/${n}`; $("#shV").textContent = `1/${s}`;
-    // light ∝ ISO × time / N²; reference (ISO 100, f/4, 1/125) = 1
-    const ratio = (i / 100) * (125 / s) * 16 / (n * n);
-    expo.style.setProperty("--b", Math.min(2.4, Math.max(.2, ratio ** .6)));
-    expo.style.setProperty("--bg", 28 / (n * n));
-    expo.style.setProperty("--gr", GRAIN[iso.value]);
-    $("#mbBlur").setAttribute("stdDeviation", `${BLUR[sh.value]} 0`);
-    $("#expoMsg").textContent = ratio < .45 ? "TOO DARK ▼" : ratio > 2.2 ? "TOO BRIGHT ▲" : "GOOD EXPOSURE ✓";
-    $("#expoInfo").replaceChildren(...[
-      `ISO ${i}: ${i >= 1600 ? "more noise, more light" : "clean image"}`,
-      `f/${n}: ${n <= 2.8 ? "blurry background (bokeh)" : n >= 8 ? "everything is sharp" : "balanced"}`,
-      `1/${s}: ${s <= 30 ? "motion blur! Great for panning" : s >= 500 ? "action frozen" : "good for most scenes"}`,
-    ].map((t) => mk("li", "", t)));
+  /* ---------- PHOTO EDITOR ---------- */
+  // preset = [exposure, contrast, saturation, warmth] offsets from neutral
+  const ed = ["br", "ct", "sa", "wa"].map((k) => $(`#ed-${k}`));
+  const edPic = $("#edPic"), edP = $$("[data-p]");
+  function edUpdate() {
+    const [br, ct, sa, wa] = ed.map((el) => +el.value);
+    $("#v-br").textContent = `${br > 100 ? "+" : ""}${br - 100}`;
+    $("#v-ct").textContent = `${ct}%`; $("#v-sa").textContent = `${sa}%`; $("#v-wa").textContent = wa;
+    const warm = wa >= 0 ? `sepia(${wa / 160}) hue-rotate(${-wa / 8}deg)` : `hue-rotate(${wa / 4}deg)`;
+    edPic.style.setProperty("--ef", `brightness(${br}%) contrast(${ct}%) saturate(${sa}%) ${warm}`);
   }
-  [iso, ap, sh].forEach((el) => el.addEventListener("input", expoUpdate));
-  const sTabs = $$("[data-scene]");
-  sTabs.forEach((b) => b.onclick = () => {
-    pressed(sTabs, b);
-    expo.className = `expo s-${b.dataset.scene}`;
-    $("#expoSub").textContent = b.dataset.scene === "car" ? "🏎️" : "⚽";
+  ed.forEach((el) => el.addEventListener("input", () => { pressed(edP, null); edUpdate(); }));
+  edP.forEach((b) => b.onclick = () => {
+    pressed(edP, b);
+    b.dataset.p.split(",").forEach((v, i) => { ed[i].value = i === 3 ? +v : 100 + +v; });
+    edUpdate();
   });
-  const fl = $$("[data-flt]");
-  fl.forEach((b) => b.onclick = () => { pressed(fl, b); expo.style.setProperty("--flt", FLT[b.dataset.flt]); });
-  expoUpdate();
+  const edS = $$("[data-src]");
+  edS.forEach((b) => b.onclick = () => { pressed(edS, b); edPic.src = b.dataset.src; });
+  const edCmp = $("#edCmp"), edHold = (on) => $("#edImg").classList.toggle("orig", on);
+  edCmp.addEventListener("pointerdown", () => edHold(true));
+  edCmp.addEventListener("keydown", (e) => { if (e.key === " " || e.key === "Enter") edHold(true); });
+  ["pointerup", "pointerleave", "keyup", "blur"].forEach((t) => edCmp.addEventListener(t, () => edHold(false)));
+  $("#edReset").onclick = () => edP[0].click();
+  edUpdate();
 
   /* ---------- ROADMAP ---------- */
   const boxes = $$(".roadmap input");

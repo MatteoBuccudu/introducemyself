@@ -344,40 +344,37 @@ without my camera</pre>
     </section>
 
     <section id="expo-lab" class="win">
-      <h2 class="px">B4 · Exposure lab <code>manual.mode</code></h2>
-      <p class="intro">Sport is fast, cars are shiny. Change ISO, aperture and shutter speed, then pick a filter.</p>
+      <h2 class="px">B4 · Photo editor <code>edit.raw</code></h2>
+      <p class="intro">Pick a photo, then edit it like in Lightroom: use a preset or move the sliders. Hold the button to see the original.</p>
       <div class="photo-lab">
         <div>
-          <div id="expo" class="expo s-futsal" role="img" aria-label="Preview that changes with the camera settings">
-            <div class="expo-bg"></div>
-            <div id="expoSub" class="expo-sub">⚽</div>
-            <i class="grain"></i>
-          </div>
-          <div class="tabs">
-            <button type="button" class="pbtn sm on" data-scene="futsal" aria-pressed="true">⚽ Futsal</button>
-            <button type="button" class="pbtn sm alt" data-scene="car" aria-pressed="false">🚗 Car</button>
+          <div id="edImg" class="ed"><img id="edPic" src="photos/car-1.jpg" alt="Photo being edited" draggable="false"></div>
+          <div class="tabs" role="group" aria-label="Choose a photo">
+            <button type="button" class="pbtn sm on" data-src="photos/car-1.jpg" aria-pressed="true">🚗 Car</button>
+            <button type="button" class="pbtn sm alt" data-src="photos/sport-2.jpg" aria-pressed="false">⚽ Sport</button>
+            <button type="button" class="pbtn sm alt" data-src="photos/city-1.jpg" aria-pressed="false">🏙️ City</button>
           </div>
         </div>
         <div class="controls">
-          <label><span class="px">ISO <b id="isoV"></b></span><input id="iso" type="range" min="0" max="5" value="1"></label>
-          <label><span class="px">Aperture <b id="apV"></b></span><input id="ap" type="range" min="0" max="6" value="2"></label>
-          <label><span class="px">Shutter <b id="shV"></b></span><input id="sh" type="range" min="0" max="6" value="2"></label>
-          <p id="expoMsg" class="px expo-msg" aria-live="polite"></p>
-          <ul id="expoInfo" class="specs"></ul>
-          <div class="px h">Filters</div>
-          <div class="tabs filters" role="group" aria-label="Photo filters">
-            <button type="button" class="pbtn sm on" data-flt="none" aria-pressed="true">Normal</button>
-            <button type="button" class="pbtn sm alt" data-flt="golden" aria-pressed="false">Golden hour</button>
-            <button type="button" class="pbtn sm alt" data-flt="bw" aria-pressed="false">B&amp;W</button>
-            <button type="button" class="pbtn sm alt" data-flt="night" aria-pressed="false">Night</button>
-            <button type="button" class="pbtn sm alt" data-flt="vintage" aria-pressed="false">Vintage</button>
-            <button type="button" class="pbtn sm alt" data-flt="vivid" aria-pressed="false">Vivid</button>
+          <label><span class="px">Exposure <b id="v-br"></b></span><input id="ed-br" type="range" min="50" max="150" value="100"></label>
+          <label><span class="px">Contrast <b id="v-ct"></b></span><input id="ed-ct" type="range" min="50" max="170" value="100"></label>
+          <label><span class="px">Saturation <b id="v-sa"></b></span><input id="ed-sa" type="range" min="0" max="220" value="100"></label>
+          <label><span class="px">Warmth <b id="v-wa"></b></span><input id="ed-wa" type="range" min="-100" max="100" value="0"></label>
+          <div class="px h">Presets</div>
+          <div class="tabs filters" role="group" aria-label="Presets">
+            <button type="button" class="pbtn sm on" data-p="0,0,0,0" aria-pressed="true">Original</button>
+            <button type="button" class="pbtn sm alt" data-p="5,10,30,40" aria-pressed="false">Golden hour</button>
+            <button type="button" class="pbtn sm alt" data-p="0,35,-100,0" aria-pressed="false">B&amp;W</button>
+            <button type="button" class="pbtn sm alt" data-p="-15,15,-10,-60" aria-pressed="false">Moody</button>
+            <button type="button" class="pbtn sm alt" data-p="5,-10,-25,30" aria-pressed="false">Vintage</button>
+            <button type="button" class="pbtn sm alt" data-p="0,15,70,0" aria-pressed="false">Vivid</button>
+          </div>
+          <div class="tabs">
+            <button type="button" id="edCmp" class="pbtn sm">👁 Hold: original</button>
+            <button type="button" id="edReset" class="pbtn sm alt">↺ Reset</button>
           </div>
         </div>
       </div>
-      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-        <filter id="mb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur id="mbBlur" stdDeviation="0 0" /></filter>
-      </svg>
     </section>
 
     <section id="terminal" class="win">
