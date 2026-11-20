@@ -70,7 +70,16 @@
       const x = c.getContext('2d'); x.clearRect(0, 0, 12, 17); x.drawImage(sprites[viewFrame], 0, 0);
     });
   }
-  if (!reduced) setInterval(() => { viewFrame ^= 1; drawViews(); }, 320);
+  if (!reduced) {
+    // short shuffle of the feet every few seconds, still otherwise: a game-menu idle
+    let step = 0;
+    const idle = () => {
+      const shuffle = step++ % 12 < 4;
+      if (shuffle) { viewFrame ^= 1; drawViews(); }
+      setTimeout(idle, shuffle ? 170 : 700);
+    };
+    setTimeout(idle, 700); // after update() has built the sprite frames
+  }
 
   /* ---------- FUN FACTS ---------- */
   const FACTS = [

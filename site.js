@@ -142,14 +142,33 @@
     );
   });
 
-  // XP bar = how far you scrolled
-  const xp = $("#xpBar");
-  const onScroll = () => {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    xp.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+  // XP bar + background parallax: one scroll loop, transform/opacity only
+  const xp = $("#xpBar"), root = document.documentElement;
+  let scrollTarget = 0, scrollShown = 0, scrollRaf = 0;
+  const paintScroll = (p) => {
+    xp.style.transform = `scaleX(${p})`;
+    root.style.setProperty("--scroll-p", p.toFixed(4));
   };
-  addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  const glideScroll = () => {
+    scrollShown += (scrollTarget - scrollShown) * 0.16;
+    if (Math.abs(scrollTarget - scrollShown) < 0.0005) scrollShown = scrollTarget;
+    paintScroll(scrollShown);
+    scrollRaf = scrollShown === scrollTarget ? 0 : requestAnimationFrame(glideScroll);
+  };
+  const readScroll = () => {
+    const max = root.scrollHeight - innerHeight;
+    scrollTarget = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    if (reduced) {
+      scrollShown = scrollTarget;
+      paintScroll(scrollTarget);
+      return;
+    }
+    if (!scrollRaf) scrollRaf = requestAnimationFrame(glideScroll);
+  };
+  addEventListener("scroll", readScroll, { passive: true });
+  addEventListener("resize", readScroll, { passive: true });
+  addEventListener("load", readScroll);
+  readScroll();
 
   /* ---------- HERO: click the pixel character ---------- */
   const LINES = [
@@ -161,12 +180,20 @@
     "Ouch! That tickles.",
   ];
   let li = 0;
-  $("#heroBtn").onclick = () => {
-    const b = $("#heroBtn");
-    b.classList.remove("jump");
-    void b.offsetWidth;
-    b.classList.add("jump");
-    $("#bubble").textContent = LINES[li++ % LINES.length];
+  const heroBtn = $("#heroBtn"), bubble = $("#bubble");
+  heroBtn.addEventListener("animationend", () => heroBtn.classList.remove("jump"));
+  heroBtn.onclick = () => {
+    if (!reduced) {
+      heroBtn.classList.remove("jump");
+      void heroBtn.offsetWidth;
+      heroBtn.classList.add("jump");
+    }
+    bubble.textContent = LINES[li++ % LINES.length];
+    if (!reduced) {
+      bubble.classList.remove("talk");
+      void bubble.offsetWidth;
+      bubble.classList.add("talk");
+    }
   };
 
   /* ---------- HERO: favourite game question ---------- */
