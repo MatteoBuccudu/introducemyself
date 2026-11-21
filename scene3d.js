@@ -92,8 +92,8 @@ function reach(p, k, t, pole) {
 
 function makeScene(canvas, { cam, look, fov = 38, bg, fog, exposure = 1 }) {
   const r = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
-  r.setPixelRatio(Math.min(devicePixelRatio, 2));
-  r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap;
+  r.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+  r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFShadowMap;
   r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = exposure;
   r.outputColorSpace = THREE.SRGBColorSpace;
   const scene = new THREE.Scene(); scene.background = bg; scene.fog = fog;
@@ -358,6 +358,10 @@ function hacker() {
 /* ---------- boot ---------- */
 try {
   const scenes = [football(), hacker()], clock = new THREE.Clock();
-  (function loop() { const t = clock.getElapsedTime(); scenes.forEach(s => s.visible && s.frame(t)); requestAnimationFrame(loop); })();
+  let on = false;
+  const loop = () => { if (!on) return; const t = clock.getElapsedTime(); scenes.forEach(s => s.visible && s.frame(t)); requestAnimationFrame(loop); };
+  const sync = () => { const want = !document.hidden && scenes.some(s => s.visible); if (want && !on) { on = true; requestAnimationFrame(loop); } else if (!want) on = false; };
+  scenes.forEach(s => new IntersectionObserver(sync).observe(s.r.domElement));
+  document.addEventListener("visibilitychange", sync);
   if (reduced) scenes.forEach(s => s.frame(0));
 } catch (e) { console.warn("3D disabled:", e); $("#studio").hidden = true; }
